@@ -1,0 +1,24 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.webx</groupId>
+  <artifactId>toolkit-webx-filter</artifactId>
+  <name>toolkit-webx-filter</name>
+  <version>2.0</version>  
+  <dependencies>
+    <!--<dependency>
+      <groupId>javax</groupId>
+      <artifactId>j2ee</artifactId>
+      <version>1.4</version>
+    </dependency>-->
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-logging</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.webx</groupId>
+      <artifactId>toolkit-webx-framework</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cryptix-jce-provider</groupId>
+  <artifactId>cryptix-jce-provider</artifactId>
+  <version>1.2.2</version>
+  <name>cryptix-jce-provider</name>
+</project>

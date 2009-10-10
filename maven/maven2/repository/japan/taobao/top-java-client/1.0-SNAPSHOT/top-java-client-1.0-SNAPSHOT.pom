@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>japan.taobao</groupId>
+  <artifactId>top-java-client</artifactId>
+  <name>top-java-client/name>
+  <version>1.0-SNAPSHOT</version>    
+</project>

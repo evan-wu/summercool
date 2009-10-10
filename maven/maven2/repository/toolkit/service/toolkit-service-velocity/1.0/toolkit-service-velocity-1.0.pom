@@ -1,0 +1,24 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.service</groupId>
+  <artifactId>toolkit-service-velocity</artifactId>
+  <name>toolkit-service-velocity</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-framework</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-template</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

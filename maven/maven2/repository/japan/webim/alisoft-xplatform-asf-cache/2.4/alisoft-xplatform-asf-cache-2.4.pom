@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>japan.webim</groupId>
+  <artifactId>alisoft-xplatform-asf-cache</artifactId>
+  <name>alisoft-xplatform-asf-cache</name>
+  <version>2.4</version>    
+</project>

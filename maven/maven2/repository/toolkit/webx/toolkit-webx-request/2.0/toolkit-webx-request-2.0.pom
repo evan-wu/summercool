@@ -1,0 +1,25 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.webx</groupId>
+  <artifactId>toolkit-webx-request</artifactId>
+  <name>toolkit-webx-request</name>
+  <version>2.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-convert</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-upload</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-digester</groupId>
+      <artifactId>commons-digester</artifactId>
+      <version>1.7</version>
+    </dependency>
+
+  </dependencies>  
+</project>

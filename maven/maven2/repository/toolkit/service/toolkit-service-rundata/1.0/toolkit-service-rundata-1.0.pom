@@ -1,0 +1,14 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.service</groupId>
+  <artifactId>toolkit-service-rundata</artifactId>
+  <name>toolkit-service-rundata</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>toolkit.webx</groupId>
+      <artifactId>toolkit-webx-request</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

@@ -1,0 +1,34 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.common</groupId>
+  <artifactId>toolkit-common-configuration</artifactId>
+  <name>toolkit-common-configuration</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>commons-jelly</groupId>
+      <artifactId>commons-jelly</artifactId>
+      <version>1.0-RC1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-configuration</groupId>
+      <artifactId>commons-configuration</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-lang</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-logging</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

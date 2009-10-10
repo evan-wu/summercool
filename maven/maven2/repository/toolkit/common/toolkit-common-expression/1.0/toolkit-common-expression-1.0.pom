@@ -1,0 +1,24 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.common</groupId>
+  <artifactId>toolkit-common-configuration</artifactId>
+  <name>toolkit-common-configuration</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-lang</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-logging</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-jexl</groupId>
+      <artifactId>commons-jexl</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.sun</groupId>
+  <artifactId>jsr173-api</artifactId>
+  <name>jsr173-api</name>
+  <version>1.0</version>    
+</project>

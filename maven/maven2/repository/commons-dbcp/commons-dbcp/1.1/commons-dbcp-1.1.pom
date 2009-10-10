@@ -1,0 +1,113 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-dbcp</groupId>
+  <artifactId>commons-dbcp</artifactId>
+  <name>Commons DBCP</name>
+  <version>1.1</version>
+  <description>Commons Database Connection Pooling</description>
+  <url>http://jakarta.apache.org/commons/dbcp/</url>
+  <inceptionYear>2001</inceptionYear>
+  <developers>
+    <developer>
+      <id>morgand</id>
+      <name>Morgan Delagrange</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>geirm</id>
+      <name>Geir Magnusson</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>craigmcc</id>
+      <name>Craig McClanahan</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>jmcnally</id>
+      <name>John McNally</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>mpoeschl</id>
+      <name>Martin Poeschl</name>
+      <email>mpoeschl@marmot.at</email>
+      <organization>tucana.at</organization>
+    </developer>
+    <developer>
+      <id>rwaldhoff</id>
+      <name>Rodney Waldhoff</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>dweinr1</id>
+      <name>David Weinrich</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>dirkv</id>
+      <name>Dirk Verbeeck</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+  </developers>
+  <build>
+    <testResources>
+      <testResource>
+        <directory>${basedir}/src/test</directory>
+        <includes>
+          <include>testpool.jocl</include>
+        </includes>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>org/apache/commons/dbcp/TestAll.java</include>
+            <include>org/apache/commons/jocl/TestAll.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-pool</groupId>
+      <artifactId>commons-pool</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>jdbc</groupId>
+      <artifactId>jdbc</artifactId>
+      <version>2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xerces</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+  </dependencies>
+</project>

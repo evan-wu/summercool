@@ -1,0 +1,6 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>top.java.client</groupId>
+  <artifactId>top-java-client</artifactId>
+  <version>1.0-SNAPSHOT</version>
+</project>

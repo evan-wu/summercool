@@ -1,0 +1,34 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.common</groupId>
+  <artifactId>toolkit-common-resourcebundle</artifactId>
+  <name>toolkit-common-resourcebundle</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>dom4j</groupId>
+      <artifactId>dom4j</artifactId>
+      <version>1.5.2</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-lang</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.common</groupId>
+      <artifactId>toolkit-common-collection</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-resource</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-pull</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

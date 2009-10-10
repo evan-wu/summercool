@@ -1,0 +1,7 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jstl</groupId>
+  <artifactId>jstl-tld</artifactId>
+  <version>1.0.6</version>
+  <name>Java Server Pages Standard Tag Library</name>
+</project>

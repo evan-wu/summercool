@@ -1,0 +1,83 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>commons-pool</groupId>
+  <artifactId>commons-pool</artifactId>
+  <name>Commons Pool</name>
+  <version>1.1</version>
+  <description>Commons Object Pooling Library</description>
+  <url>http://jakarta.apache.org/commons/pool/</url>
+  <inceptionYear>2001</inceptionYear>
+  <developers>
+    <developer>
+      <id>morgand</id>
+      <name>Morgan Delagrange</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>geirm</id>
+      <name>Geir Magnusson</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>craigmcc</id>
+      <name>Craig McClanahan</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>rwaldhoff</id>
+      <name>Rodney Waldhoff</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>dweinr1</id>
+      <name>David Weinrich</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+    <developer>
+      <id>dirkv</id>
+      <name>Dirk Verbeeck</name>
+      <email></email>
+      <organization></organization>
+    </developer>
+  </developers>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>org/apache/commons/pool/TestAll.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>commons-collections</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>xml-apis</groupId>
+      <artifactId>xml-apis</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>xerces</groupId>
+      <artifactId>xerces</artifactId>
+      <version>2.0.2</version>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,14 @@
+                                                                                                                                                                 <project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>toolkit.service</groupId>
+  <artifactId>toolkit-service-template</artifactId>
+  <name>toolkit-service-template</name>
+  <version>1.0</version>  
+  <dependencies>
+    <dependency>
+      <groupId>toolkit.service</groupId>
+      <artifactId>toolkit-service-framework</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>  
+</project>

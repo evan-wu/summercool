@@ -1,0 +1,9 @@
+请按照下面步骤在你本机上安装Maven 2工具：
+
+1. 添加M2_HOME变量到系统环境变量，值为maven2的路径，如：D:\maven2
+2. 添加M2变量到系统环境变量，值为：%M2_HOME%\bin
+3. 更新PATH环境变量，添加%M2%到PATH值的末尾，注意%M2%和原PATH值之间要有;隔开，末尾没有;
+4. 确保环境变量有JAVA_HOME变量，值为jdk所在位置，如：D:\jdk1.5.0_16，如果没有请添加
+5. 打开命令提示符工具，输入mvn -version，回车，如果返回Maven，Java和系统版本信息，说明Maven 2安装成功，否则请检查上面的过程
+6. 打开maven2目录下的conf目录中的setting.xml文件，找到<localRepository>节点，修改该节点的值为maven2目录中repository的绝对路径，如：<localRepository>D:\maven2\repository</localRepository>
+7. 到此Maven 2已在你的系统中安装成功
