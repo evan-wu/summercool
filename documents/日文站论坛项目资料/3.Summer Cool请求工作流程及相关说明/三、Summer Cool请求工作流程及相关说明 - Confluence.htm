@@ -1,0 +1,1302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0068)http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420 -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <TITLE>三、Summer Cool请求工作流程及相关说明 - Confluence</TITLE>
+            
+<META id="confluence-context-path" name="confluence-context-path" content="">
+<SCRIPT type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+    var i18n = [];
+</SCRIPT>
+
+
+
+<!-- include system resources -->
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/master.css" title="Confluence Master Stylesheet" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/wiki-content.css" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/tabs.css" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/menu.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/1322/11/1.0/_/download/resources/confluence.web.resources:master-styles/menu-ie.css" media="all"/>
+<![endif]-->
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/tables.css" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/panels.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/1322/11/1.0/_/download/resources/confluence.web.resources:master-styles/master-ie.css" title="Master-IE" media="all"/>
+<![endif]-->
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/renderer-macros.css" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/information-macros.css" media="all">
+<LINK type="text/css" rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/layout-macros.css" media="all">
+<SCRIPT type="text/javascript" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/yahoo-dom-event.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/atlassian.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/breadcrumbs.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/atlassian-effects.js"></SCRIPT>
+
+<!-- end system resources -->
+
+    <LINK rel="stylesheet" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/combined.css" type="text/css">
+
+    <META name="confluence-request-time" content="1254211226882">
+<LINK rel="shortcut icon" href="http://b2b-doc.alibaba-inc.com/images/icons/favicon.ico">
+<LINK rel="icon" type="image/png" href="http://b2b-doc.alibaba-inc.com/images/icons/favicon.png">
+
+
+    
+
+    <SCRIPT type="text/javascript">
+
+    function toggleMenu(menuId)
+    {
+        var visible = toggleVisibility(menuId);
+        if (visible)
+            setCookie("confluence.leftnav." + menuId, true);
+        else
+            setCookie("confluence.leftnav.", false);
+    }
+
+    function isMenuExpanded(menuId)
+    {
+        return getCookie("confluence.leftnav." + menuId);
+    }
+
+    function initMenuItem(menuId)
+    {
+        if (document.getElementById(menuId))
+        {
+            if (isMenuExpanded(menuId) == 'true')
+            {
+                document.getElementById(menuId).style.display = "block";
+            }
+            else
+            {
+                document.getElementById(menuId).style.display = "none";
+            }
+        }
+    }
+</SCRIPT>
+
+</HEAD><BODY onload="placeFocus()" id="com-atlassian-confluence">
+    
+
+
+    <SCRIPT type="text/javascript">
+        function hideMessage(messageId)
+        {
+            var message = document.getElementById(messageId)
+            message.style.display = "none";
+            setCookie(messageId, true);
+        }
+    </SCRIPT>
+
+        
+
+<DIV id="header">
+        <FORM id="quick-search" method="post" action="http://b2b-doc.alibaba-inc.com/dosearchsite.action">
+                <FIELDSET>
+            <LEGEND>Quick Search</LEGEND>
+            <INPUT type="hidden" name="quickSearch" value="true">
+                        <INPUT type="hidden" name="searchQuery.spaceKey" value="conf_global">
+            <INPUT id="quick-search-query" type="text" accesskey="q" name="searchQuery.queryString" size="25">
+            <INPUT id="quick-search-submit" type="submit" value="Search">
+        </FIELDSET>
+        <FIELDSET class="hidden parameters">
+            <INPUT type="hidden" id="quickSearchPlaceholder" value="Search">
+        </FIELDSET>
+    </FORM>
+        
+    
+    <OL id="breadcrumbs">
+                    
+        <LI><SPAN>
+                                    <A href="http://b2b-doc.alibaba-inc.com/dashboard.action">Dashboard</A>
+                </SPAN></LI>
+                    
+        <LI><SPAN>
+         &gt;                             <A href="http://b2b-doc.alibaba-inc.com/display/jcbu">04 JCBU文档</A>
+                </SPAN></LI>
+                                        <LI id="ellipsis" title="    &hellip;
+                    Home
+             &gt;         01 日文站项目空间
+             &gt;         79 C2J论坛项目
+        &hellip;"><SPAN>&gt; <STRONG>…</STRONG></SPAN></LI>
+                                    
+        <LI class="hidden-crumb"><SPAN>
+         &gt;                             <A href="http://b2b-doc.alibaba-inc.com/display/jcbu/Home">Home</A>
+                </SPAN></LI>
+                                
+        <LI class="hidden-crumb"><SPAN>
+         &gt;                             <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=9470757">01 日文站项目空间</A>
+                </SPAN></LI>
+                                
+        <LI class="hidden-crumb"><SPAN>
+         &gt;                             <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=22023076">79 C2J论坛项目</A>
+                </SPAN></LI>
+                    
+        <LI><SPAN>
+         &gt;                             <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=29297881">C2J论坛框架文档</A>
+                </SPAN></LI>
+                    
+        <LI><SPAN>
+         &gt;                             三、Summer Cool请求工作流程及相关说明
+                </SPAN></LI>
+        </OL>
+
+</DIV>
+
+<DIV id="PageContent">
+    <TABLE cellspacing="0" cellpadding="0" width="100%">
+        <TBODY><TR>
+                    <TD width="150px" valign="top" class="sidebar" nowrap="">
+                <DIV class="leftnav">
+                     <DIV id="logodiv">
+                        					        					                          </DIV>
+                      <DIV id="menu">
+                        
+                        
+<H5><A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420#" onclick="toggleMenu(&#39;pagenav&#39;); return false;"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/docs_16.gif" width="16" height="16" border="0" align="absmiddle"> Page Operations</A></H5>
+<DIV id="pagenav" class="subnav" style="display: block; ">
+   <UL>
+	   		   <LI><A id="viewPageLink" href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/三、Summer Cool请求工作流程及相关说明 - Confluence.htm" class="current" accesskey="v"><U>V</U>iew</A></LI>
+	   		   <LI><A id="editPageLink" href="http://b2b-doc.alibaba-inc.com/pages/editpage.action?pageId=30179420" accesskey="e"><U>E</U>dit</A></LI>
+	   		   <LI><A id="view-attachments-link" href="http://b2b-doc.alibaba-inc.com/pages/viewpageattachments.action?pageId=30179420" accesskey="a"><U>A</U>ttachments (20)</A></LI>
+	   		   <LI><A id="view-page-info-link" href="http://b2b-doc.alibaba-inc.com/pages/viewinfo.action?pageId=30179420" accesskey="i"><U>I</U>nfo</A></LI>
+	      </UL>
+</DIV>
+
+                        
+                        
+<H5><A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420#" onclick="toggleMenu(&#39;browsenav&#39;); return false;"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/browse_space.gif" height="16" width="16" border="0" align="absmiddle" title="Find Content"> Browse Space</A></H5>
+<DIV id="browsenav" class="subnav" style="display: none; ">
+	<UL>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/pages/listpages.action?key=jcbu">Pages</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/pages/viewrecentblogposts.action?key=jcbu">News</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/labels/listlabels-heatmap.action?key=jcbu">Labels</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/spaces/listattachmentsforspace.action?key=jcbu">Attachments</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/spaces/space-bookmarks.action?spaceKey=jcbu">Bookmarks</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/spaces/viewmailarchive.action?key=jcbu">Mail</A></LI>
+					<LI><A href="http://b2b-doc.alibaba-inc.com/spaces/viewspacesummary.action?key=jcbu">Advanced</A></LI>
+			</UL>
+</DIV>
+
+<H5><A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420#" onclick="toggleMenu(&#39;addcontent&#39;); return false;"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/add_16.gif" height="16" width="16" border="0" align="absmiddle" title="Find Content"> Add Content</A></H5>
+<DIV id="addcontent" class="subnav" style="display: block; ">
+    <UL>
+										
+									<LI><A href="http://b2b-doc.alibaba-inc.com/pages/createpage.action?spaceKey=jcbu&fromPageId=30179420"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/add_page_16.gif" height="16" width="16" border="0" align="absmiddle" title="Add Page">&nbsp;Add Page</A></LI>
+						    			</UL>
+</DIV>
+
+                      </DIV>
+                    <SCRIPT type="text/javascript">
+                        initMenuItem("browsenav");
+                        initMenuItem("pagenav");
+                        initMenuItem("addcontent");
+                    </SCRIPT>
+                </DIV>
+            </TD>
+                    <TD valign="top" width="100%">
+                <!-- Inner content table -->
+                <TABLE width="100%" cellpadding="2" cellspacing="0">
+                    <TBODY><TR>
+                        <TD colspan="2" valign="middle" align="right" style="background-color:#F0F0F0">
+                            
+    <UL id="page-view-panel">
+        <LI>    <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420&decorator=printable" rel="nofollow" title="View a printable version of the current page." class="print icon">View a printable version of the current page.</A>
+</LI>
+                        
+                                     </UL>
+
+                                        <UL id="user-control-panel">
+                    <LI class="first">Welcome <A href="http://b2b-doc.alibaba-inc.com/display/~shaochuan.wangsc">王少川</A></LI>
+
+                            <LI><A href="http://b2b-doc.alibaba-inc.com/users/viewuserhistory.action" onclick="window.open(this.href,&#39;user_history&#39;, &#39;width=620, height=475, resizable&#39;); return false;" title="View History">History</A></LI>
+            
+            <LI><A href="http://b2b-doc.alibaba-inc.com/users/viewuserprofile.action?username=shaochuan.wangsc">Preferences</A></LI>
+
+            
+            <LI><A href="http://b2b-doc.alibaba-inc.com/logout.action" id="logout">Log Out</A></LI>
+                </UL>
+                            </TD>
+                    </TR>
+                    <TR>
+                        <TD id="mainViewPane">
+                            <DIV>
+                                <TABLE class="fullWidthBorderless">
+                                    <TBODY><TR><TD><SPAN id="spaceFullNameLink">            <A href="http://b2b-doc.alibaba-inc.com/display/jcbu">04 JCBU文档</A>    </SPAN></TD>
+                                    <TD align="right">
+    <A id="pageFavourite" href="http://b2b-doc.alibaba-inc.com/labels/addfavourite.action?entityId=30179420"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/star_grey.gif" height="16" width="16" border="0" align="absmiddle" title="Add this page to your favourites list" alt="Add this page to your favourites list"></A>
+    <A id="pageWatch" href="http://b2b-doc.alibaba-inc.com/spaces/viewspacecontent.action?key=jcbu"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/add_space_notification_16.gif" height="16" width="16" border="0" align="absmiddle" title="You are currently watching the 04 JCBU文档 space" alt="You are currently watching the 04 JCBU文档 space"></A>
+</TD>
+                                </TR></TBODY></TABLE>
+                                <H1>
+                                                                            <A href="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/三、Summer Cool请求工作流程及相关说明 - Confluence.htm">三、Summer Cool请求工作流程及相关说明</A>
+                                    </H1>
+                            </DIV>
+                                                        <DIV id="content">
+                                <!--
+    Root decorator: all decisions about how a page is to be decorated via the
+                    inline decoration begins here.
+-->
+
+
+
+<!--
+    Switch based upon the context. However, for now, just delegate to a decorator
+    identified directly by the context.
+-->
+
+
+    
+    <!--[if gte IE 5.5000]>
+<script language="JavaScript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 or higher.
+   {
+   for(var i=0; i<document.images.length; i++)
+      {
+	  var img = document.images[i]
+	  var imgName = img.src.toUpperCase()
+	  if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+	     {
+		 var imgID = (img.id) ? "id='" + img.id + "' " : ""
+		 var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+		 var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+		 var imgStyle = "display:inline-block;" + img.style.cssText
+		 if (img.align == "left") imgStyle = "float:left;" + imgStyle
+		 if (img.align == "right") imgStyle = "float:right;" + imgStyle
+		 if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+		 var strNewHTML = "<span " + imgID + imgClass + imgTitle
+		 + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
+	     + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+		 + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>"
+		 img.outerHTML = strNewHTML
+		 i = i-1
+	     }
+      }
+   }
+window.attachEvent("onload", correctPNG);
+</script>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<DIV class="smalltext">
+                Added by <A href="http://b2b-doc.alibaba-inc.com/display/~shaochuan.wangsc">王少川</A>, last edited by <A href="http://b2b-doc.alibaba-inc.com/display/~shaochuan.wangsc">王少川</A> on Jul 20, 2009
+                      &nbsp;(<A class="noprint" href="http://b2b-doc.alibaba-inc.com/pages/diffpages.action?pageId=30179420&originalId=34411084">view change</A>)
+              
+    
+ 
+<DIV id="labels-section">
+    <DIV id="labels-header" class="section-header">
+        <H2 class="section-title">Labels</H2>&nbsp;
+                <SPAN id="labels-edit-link" class="inline-control-link">
+            <A href="" onclick="onAddLabel(); showLabelsInput(); return false;">Edit Labels</A>
+        </SPAN>
+            </DIV>
+    <DIV id="labelsList">
+                    (None)
+            </DIV>
+
+    <!-- Delay the loading of the external javascript file needed for labels (as it takes too long to load and visibly holds loading of the page body) -->
+    <!-- To do this without javascript errors over undefined functions, we need to declare stubs here (that are overrided later by the proper implementations) -->
+    <SCRIPT type="text/javascript">
+        function doAddLabel(hideTextfieldAfterAddParam)
+        {
+            // stub
+        }
+
+        function onAddLabel()
+        {
+            // stub
+        }
+
+        function showLabelsInput()
+        {
+            // stub
+        }
+    </SCRIPT>
+
+    <!-- This is a hack to work around an apparent SiteMesh bug - http://jira.opensymphony.com/browse/SIM-198 -->
+    
+
+    <SPAN class="error"><SPAN class="errorMessage" id="errorSpan"></SPAN></SPAN>
+    <FORM name="addLabelForm" method="" action="" onsubmit="doAddLabel(false); return false;" style="margin: 0px; padding: 0px">
+        <DIV id="labelInputSpan" style="display: none">
+            <DIV style="border: 1px solid #cccccc; padding: 8px; background-color: #f0f0f0">
+
+            <DIV id="labelOperationErrorContainer" style="display: none"><SPAN class="error"><SPAN class="errorMessage" id="labelOperationErrorMessage"></SPAN></SPAN></DIV>
+
+            <TABLE width="90%">
+                <TBODY><TR>
+                    <TD>
+                        <DIV class="formtitle" style="padding-bottom: 3px; font-size: 13px;">Add Labels</DIV>
+                    </TD>
+                    <TD align="right"><DIV id="waitImageAndStatus" style="display: none; height: 16px;"><IMG alt="Wait Image" border="0" align="absmiddle" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/wait.gif">&nbsp;<SPAN id="labelOperationStatus" class="smalltext" style="vertical-align: middle"></SPAN></DIV></TD>
+                </TR>
+                <TR><TD width="50%">
+                        Enter labels to add to this page:<BR>
+            <INPUT autocomplete="off" type="text" id="labelName" name="labelsString" value="" class="monospaceInput" size="40">
+            <INPUT type="submit" onclick="doAddLabel(false); return false;" value="Add"><INPUT type="button" onclick="doAddLabel(true); return false;" value="Done">
+            <DIV class="auto_complete" id="labelsAutocompleteList" style="display: none; "></DIV>
+            <DIV class="smalltext">
+                Looking for a label? Just start typing.
+            </DIV>
+            </TD>
+                <TD width="50%" valign="top">
+                    <DIV id="suggestedLabelsSpan"></DIV>
+                </TD>
+            </TR></TBODY></TABLE>
+            </DIV>
+        </DIV>
+    </FORM>
+</DIV>
+</DIV>
+
+
+<DIV class="wiki-content" style="margin-right:10px;">
+   <!-- wiki content -->
+            <H3><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-1.SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%28%E5%A6%82%E4%B8%8B%E5%9B%BE%29"></A>1. Summer Cool请求工作流(如下图)</H3>
+
+<P><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/Summer Cool.gif" align="absmiddle" border="0"></P>
+
+<H3><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-2.SpringMVC%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"></A>2. Spring MVC请求工作流相关说明</H3>
+
+
+<H5><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-1%29%E8%BF%87%E6%BB%A4%E5%99%A8"></A>1) 过滤器</H5>
+
+<P>&nbsp;&nbsp;&nbsp; A. 因为服务器默认编码是ISO-8859-1进行数据传输的，所以一般的web项目都是通过过滤器(filter)进行编码转换的；如下：</P>
+
+<P>&nbsp; &nbsp; 在<FONT color="#0000ff"><B>web.xml</B></FONT>文件中添加如下配置(<FONT color="#ff0000"><B>注</B></FONT><FONT color="#0000ff"><B>-该过滤器是spring自身提供的,有兴趣的可以去查看源代码</B></FONT>)：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java">&lt;filter&gt;&nbsp;
+    &lt;filter-name&gt;Set <SPAN class="code-object">Character</SPAN> Encoding&lt;/filter-name&gt;&nbsp;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;&nbsp;
+        &lt;init-param&gt;&nbsp;
+            &lt;param-name&gt;encoding&lt;/param-name&gt;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;     &lt;param-value&gt;UTF-8&lt;/param-value&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;     &lt;/init-param&gt;&nbsp;
+&lt;/filter&gt;&nbsp;
+&lt;filter-mapping&gt;&nbsp;
+    &lt;filter-name&gt;Set <SPAN class="code-object">Character</SPAN> Encoding&lt;/filter-name&gt;&nbsp;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;&nbsp;
+&lt;/filter-mapping&gt;</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp; B. 其他过滤器(filter)的执行</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. 论坛项目已经提取出了一个公共的父filter(com.alibaba.japan.club.runtime.springmvc.filter.<FONT color="#0000ff"><B>JapanAbstractFilter</B></FONT>)，任何<FONT color="#0000ff"><B>filter</B></FONT>都可以继续该父<FONT color="#0000ff"><B>filter</B></FONT>并进行过滤器的使用；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 并且该过滤器已经进行了简单的功能包装，并解决了<FONT color="#0000ff"><B>weblogic</B></FONT>中<FONT color="#0000ff"><B>forward</B></FONT>重复执行<FONT color="#0000ff"><B>filter</B></FONT>的问题；部分核心代码如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) <SPAN class="code-keyword">throws</SPAN> IOException,
+        ServletException {
+    <SPAN class="code-comment">// 在weblogic中，servlet forward时，仍会调用此filter
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (!(request <SPAN class="code-keyword">instanceof</SPAN> HttpServletRequest &amp;&amp; response <SPAN class="code-keyword">instanceof</SPAN> HttpServletResponse)
+         || (request.getAttribute(getClass().getName()) != <SPAN class="code-keyword">null</SPAN>)) {
+        chain.doFilter(request, response);
+        <SPAN class="code-keyword">return</SPAN>;
+    }
+    <SPAN class="code-comment">// 防止重入.
+</SPAN>    request.setAttribute(getClass().getName(), <SPAN class="code-object">Boolean</SPAN>.TRUE);
+    <SPAN class="code-comment">// 执行子类的doFilter
+</SPAN>    HttpServletRequest req = (HttpServletRequest) request;
+    HttpServletResponse res = (HttpServletResponse) response;
+    doFilter(req, res, chain); <SPAN class="code-comment">// 子类只要实现该方法即可
+</SPAN>}</PRE>
+</DIV></DIV>
+<P><FONT color="#cc0000"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#990000"><B>注：</B></FONT><FONT color="#000000">经过测试，一次请求会多次执行同一个过滤器，所以不是在万不得已的情况下不要使用过滤器功能，可以使用下面马上要介绍的</FONT><FONT color="#0000ff"><B>AroundPipeline、EntrancePipeline</B></FONT><FONT color="#000000">和</FONT><FONT color="#0033ff"><B>ExceptionPipeline</B></FONT><FONT color="#000000">功能来实现过滤器的功能。</FONT></P>
+
+<H5><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-2%29DispatcherServlet%E6%A0%B8%E5%BF%83%E6%8E%A7%E5%88%B6%E5%99%A8"></A>2) DispatcherServlet核心控制器</H5>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; A. Dispatcher核心控制器类图如下：</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/tempGif1.gif" align="absmiddle" border="0"></P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-2.1AroundPipeline%E5%8A%9F%E8%83%BD%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"></A>2.1 AroundPipeline功能及相关说明</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; A. 因为<FONT color="#0000ff"><B>Spring MVC</B></FONT>自身的拦截器无法实现对所有请求处理之前及之后的包装功能；如：在所有的请求处理前，都执行<FONT color="#0000ff"><B>preHandleXXX()</B></FONT>方法，而所有的请求处理之后都执行<FONT color="#0000ff"><B>postHandleXXX()</B></FONT>方法。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT><FONT color="#000000">1.</FONT> 核心的DispatcherServlet核心控制器为：com.alibaba.japan.club.runtime.springmvc.servlet.<FONT color="#0000ff"><B>JapanDispatcherServlet</B></FONT><FONT color="#000000">。</FONT><BR>
+<FONT color="#000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 这里所说的不能执行的意思并不是完全不能执行，而是</FONT><FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">自身的拦截器只能对其</FONT><FONT color="#0000ff"><B>Controller</B></FONT><FONT color="#000000">进行前后拦截，而不能对所有的请求进行前后拦截，所以特加入此功能；</FONT><BR>
+<FONT color="#990000"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">3. 虽然</FONT><FONT color="#0000ff"><B>filter</B></FONT><FONT color="#000000">可以完成此功能，但是又有</FONT><FONT color="#0000ff"><B>filter</B></FONT><FONT color="#000000">被多次执行的问题和不能指定执行顺序，所以特加入此功能。</FONT></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) 部分核心代码(请求执行的<FONT color="#0000ff"><B>dispatcher</B></FONT>方法)如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> void doDispatch(HttpServletRequest request, HttpServletResponse response) <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-keyword">if</SPAN> (logger.isTraceEnabled()) {
+        logger.trace(<SPAN class="code-quote">"Bound request context to thread: "</SPAN> + request);
+    }
+    <SPAN class="code-comment">// execute dispatchInternal
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (<SPAN class="code-keyword">this</SPAN>.aroundPipelines != <SPAN class="code-keyword">null</SPAN>) {
+        executeAroundPipelines(request, response, 0);
+    } <SPAN class="code-keyword">else</SPAN> {
+        doDispatchInternal(request, response);
+    }
+}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
+</DIV></DIV>
+<P>&nbsp; &nbsp; &nbsp;&nbsp; 2) 部分核心代码(执行<FONT color="#0000ff"><B>aroundPipelines</B></FONT>方法)如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">private</SPAN> void executeAroundPipelines(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">int</SPAN> index)
+        <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-comment">//
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (aroundPipelines.size() &gt; index) {
+        JapanAroundPipeline aroundPipeline = (JapanAroundPipeline) aroundPipelines.get(index);
+        <SPAN class="code-keyword">try</SPAN> {
+            aroundPipeline.preHandleAroundPipeline(request, response);
+	    <SPAN class="code-comment">// execute aroundPipelines
+</SPAN>            <SPAN class="code-keyword">if</SPAN> ((aroundPipelines.size() - 1) == index) {
+                doDispatchInternal(request, response);
+            } <SPAN class="code-keyword">else</SPAN> {
+                executeAroundPipelines(request, response, ++index);
+	    }
+	} <SPAN class="code-keyword">finally</SPAN> {
+            aroundPipeline.postHandleAroundPipeline(request, response);
+	}
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) 部分核心代码(<FONT color="#0000ff"><B>AroundPipeline</B></FONT>接口)如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">interface</SPAN> JapanAroundPipeline <SPAN class="code-keyword">extends</SPAN> PriorityOrdered {
+	/**
+	 * 执行请求前执行该方法
+	 *
+	 * @author:shaochuan.wangsc
+	 * @date:2009-4-18
+	 * @param request
+	 * @param response
+	 */
+	<SPAN class="code-keyword">public</SPAN> void preHandleAroundPipeline(HttpServletRequest request, HttpServletResponse response) <SPAN class="code-keyword">throws</SPAN> Exception;
+
+	/**
+	 * 执行请求后执行该方法(尽管请求抛出异常,同样会执行该方法)
+	 *
+	 * @author:shaochuan.wangsc
+	 * @date:2009-4-18
+	 * @param request
+	 * @param response
+	 */
+	<SPAN class="code-keyword">public</SPAN> void postHandleAroundPipeline(HttpServletRequest request, HttpServletResponse response) <SPAN class="code-keyword">throws</SPAN> Exception;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT><FONT color="#000000">1.</FONT> 通过上面的代码，我们可以看出：所有的<FONT color="#0000ff"><B>dispatcher</B></FONT>请求都是先执行<FONT color="#0000ff"><B>AroundPipeline</B></FONT>的<FONT color="#0000ff"><B>preHandleAroundPipeline()</B></FONT>方法；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 然后再执行<FONT color="#0000ff"><B>dispatcherInternal()</B></FONT>方法；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 最后执行<FONT color="#0000ff"><B>postHandleAroundPipeline()</B></FONT>方法(代码是通过递规调整用实现的，功能简单并且灵活)。<BR>
+<FONT color="#0000ff"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">4.</FONT> <FONT color="#0000ff"><B>PriorityOrdered</B></FONT>接口的作用：指定<FONT color="#0000ff"><B>JapanAroundPipeline</B></FONT>接口的执行顺序，值越小越先执行。<BR>
+<FONT color="#990000"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">5. 因为</FONT><FONT color="#0000ff"><B>postHandleAroundPipeline()</B></FONT><FONT color="#000000">方法是在</FONT><FONT color="#0000ff"><B>finally</B></FONT><FONT color="#000000">代码块中执行，所以可以保证</FONT><FONT color="#0000ff"><B>postHandleAroundPipeline()</B></FONT><FONT color="#000000">方法永远被执行。</FONT></P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-3.1EntrancePipeline%E5%8A%9F%E8%83%BD%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"></A>3.1 EntrancePipeline功能及相关说明</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. 因为<FONT color="#0000ff"><B>Spring</B></FONT>执行<FONT color="#0000ff"><B>doDispatch</B></FONT>方法时并不能对所有的请求执行前进行拦截功能，所以特加入<FONT color="#0000ff"><B>EntrancePipeline</B></FONT>功能来实现对所有的请求的前置拦截。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. 虽然<FONT color="#0000ff"><B>AroundPipeline</B></FONT>可以进行前置拦截，但是<FONT color="#0000ff"><B>AroundPipeline</B></FONT>抛出异常时并不能进行<FONT color="#0000ff"><B>Spring MVC</B></FONT>的统一异常捕获。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. 而<FONT color="#0000ff"><B>EntrancePipeline</B></FONT>执出的异常则可以进行<FONT color="#0000ff"><B>Spring MVC</B></FONT>的异常统一捕获处理，并且可以在拦截后进行指定视图的跳转（此功能正好可以使用权限过滤器等扩展功能）。</P>
+
+<P>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 1) 核心代码如下(<FONT color="#0000ff"><B>doDispatchInternal</B></FONT>方法的入口代码)</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-comment">// execute entrancePipelines
+</SPAN><SPAN class="code-keyword">if</SPAN> (<SPAN class="code-keyword">this</SPAN>.entrancePipelines != <SPAN class="code-keyword">null</SPAN>) {
+    <SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">Object</SPAN> object : entrancePipelines) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JapanEntrancePipeline entrancePipeline = (JapanEntrancePipeline) object;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <SPAN class="code-keyword">if</SPAN> (!entrancePipeline.isAuthorized(processedRequest, response)) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; ModelAndView modelAndView = entrancePipeline.handleEntranceInternal(processedRequest, response);
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; render(modelAndView, processedRequest, response);
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <SPAN class="code-keyword">return</SPAN>;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp; }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. <FONT color="#000000">通过上面的代码我们可以看得出来：</FONT><FONT color="#0000ff"><B>JapanEntrancePipeline</B></FONT><FONT color="#000000">接口首先执行</FONT><FONT color="#0000ff"><B>isAuthorized()</B></FONT><FONT color="#000000">方法；</FONT><BR>
+<FONT color="#990000"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">2. 如果返回结果为false，则会执行</FONT><FONT color="#0000ff"><B>handleEntranceInternal()</B></FONT><FONT color="#000000">方法并返回</FONT><FONT color="#0000ff"><B>ModelAndView</B></FONT><FONT color="#000000">视图；</FONT><BR>
+<FONT color="#990000"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">3. 结束此次请求并返回视图给客户端。</FONT></P>
+
+<P>&nbsp; &nbsp;&nbsp; B. <FONT color="#0000ff"><B>JapanEntrancePipeline</B></FONT>接口定义如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">interface</SPAN> JapanEntrancePipeline <SPAN class="code-keyword">extends</SPAN> PriorityOrdered {
+&nbsp;&nbsp;&nbsp; /**
+&nbsp;&nbsp;&nbsp; &nbsp;*
+&nbsp;&nbsp;&nbsp; &nbsp;* @author:shaochuan.wangsc
+&nbsp;&nbsp;&nbsp; &nbsp;* @date:2009-4-15
+&nbsp;&nbsp;&nbsp; &nbsp;* @param request
+&nbsp;&nbsp;&nbsp; &nbsp;* @param response
+&nbsp;&nbsp;&nbsp; &nbsp;* @<SPAN class="code-keyword">return</SPAN>
+&nbsp;&nbsp;&nbsp; &nbsp;/*
+&nbsp;&nbsp;&nbsp; <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">boolean</SPAN> isAuthorized(HttpServletRequest request, HttpServletResponse response) <SPAN class="code-keyword">throws</SPAN> Exception;
+&nbsp;&nbsp;&nbsp; /**
+&nbsp;&nbsp;&nbsp; &nbsp;* 如果&lt;code&gt;isAuthorized&lt;/code&gt;方法返回&lt;code&gt;<SPAN class="code-keyword">false</SPAN>&lt;/code&gt;,则会执行该方法&lt;br&gt;
+&nbsp;&nbsp;&nbsp; &nbsp;*
+&nbsp;&nbsp;&nbsp; &nbsp;* @author:shaochuan.wangsc
+&nbsp;&nbsp;&nbsp; &nbsp;* @date:2009-4-15
+&nbsp;&nbsp;&nbsp; &nbsp;* @param request
+&nbsp;&nbsp;&nbsp; &nbsp;* @param response
+&nbsp;&nbsp;&nbsp; &nbsp;* @<SPAN class="code-keyword">return</SPAN>
+&nbsp;&nbsp;&nbsp; &nbsp;/*
+&nbsp;&nbsp;&nbsp; <SPAN class="code-keyword">public</SPAN> ModelAndView handleEntranceInternal(HttpServletRequest request, HttpServletResponse response) <SPAN class="code-keyword">throws</SPAN> Exception;
+}&nbsp;</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; C. <FONT color="#0000ff"><B>JapanEntrancePipeline</B></FONT>接口的应用举例：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">package</SPAN> com.alibaba.japan.club.web.pipeline.security;
+
+<SPAN class="code-keyword">import</SPAN> java.util.ArrayList;
+<SPAN class="code-keyword">import</SPAN> java.util.List;
+
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletRequest;
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletResponse;
+
+<SPAN class="code-keyword">import</SPAN> org.springframework.util.AntPathMatcher;
+<SPAN class="code-keyword">import</SPAN> org.springframework.web.servlet.ModelAndView;
+<SPAN class="code-keyword">import</SPAN> org.springframework.web.util.UrlPathHelper;
+
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.core.factory.ServiceFactory;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.core.service.group.UserGroupService;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.core.service.user.UserService;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.dal.dao.group.dataobject.UserGroupDO;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.dal.dao.user.dataobject.UserDO;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.runtime.springmvc.pipeline.JapanEntrancePipeline;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.web.common.cookie.CookieConstants;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.web.cookyjar.Cookyjar;
+
+/**
+ * 后台管理过滤器
+ *
+ * @author:shaochuan.wangsc
+ * @date:2009-4-16
+ *
+ */
+<SPAN class="code-keyword">public</SPAN> class AdminSecurityPipeline <SPAN class="code-keyword">implements</SPAN> JapanEntrancePipeline {
+    <SPAN class="code-comment">// 是管理员
+</SPAN>    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-keyword">static</SPAN> <SPAN class="code-object">String</SPAN> IS_ADMIN = <SPAN class="code-quote">"Y"</SPAN>;
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-object">int</SPAN> order;
+
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-keyword">final</SPAN> List&lt;<SPAN class="code-object">String</SPAN>&gt; filterPathList = <SPAN class="code-keyword">new</SPAN> ArrayList&lt;<SPAN class="code-object">String</SPAN>&gt;();
+
+    /**
+     * 查看请求的path是否是被过滤
+     */
+    <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">boolean</SPAN> isAuthorized(HttpServletRequest request, HttpServletResponse response) {
+        <SPAN class="code-comment">//
+</SPAN>	UrlPathHelper urlPathHelper = <SPAN class="code-keyword">new</SPAN> UrlPathHelper();
+	AntPathMatcher pathMatcher = <SPAN class="code-keyword">new</SPAN> AntPathMatcher();
+	<SPAN class="code-object">String</SPAN> path = urlPathHelper.getLookupPathForRequest(request);
+	<SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">String</SPAN> filterPath : filterPathList) {
+	    <SPAN class="code-keyword">if</SPAN> (pathMatcher.match(filterPath, path)) {
+	        <SPAN class="code-keyword">if</SPAN> (isAdmin(request)) {
+		    <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">true</SPAN>;
+		} <SPAN class="code-keyword">else</SPAN> {
+		    <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">false</SPAN>;
+		}
+	    }
+	}
+	<SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">true</SPAN>;
+    }
+
+    /**
+     * 如果过滤后不被许可,则执行该方法并返回处理的相关视图
+     */
+    <SPAN class="code-keyword">public</SPAN> ModelAndView handleEntranceInternal(HttpServletRequest request, HttpServletResponse response) {
+	<SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">new</SPAN> ModelAndView(<SPAN class="code-quote">"redirect:/error.htm"</SPAN>);
+    }
+
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-object">boolean</SPAN> isAdmin(HttpServletRequest request) {
+        <SPAN class="code-comment">// 论坛用户id
+</SPAN>	Cookyjar jar = (Cookyjar) request.getAttribute(Cookyjar.CookyjarInRequest);
+	<SPAN class="code-keyword">if</SPAN> (jar != <SPAN class="code-keyword">null</SPAN>) {
+	    <SPAN class="code-object">String</SPAN> clubUserID = jar.get(CookieConstants.CLUB_USER_ID_COOKIE);
+	    <SPAN class="code-keyword">if</SPAN> (clubUserID != <SPAN class="code-keyword">null</SPAN>) {
+	        <SPAN class="code-object">Long</SPAN> id = <SPAN class="code-object">Long</SPAN>.parseLong(clubUserID);
+		UserDO user = ServiceFactory.getInstance().getService(UserService.class).findUserById(id);
+		<SPAN class="code-comment">// CLUB_USER表中无该用户或该用户无用户组
+</SPAN>		<SPAN class="code-keyword">if</SPAN> (user != <SPAN class="code-keyword">null</SPAN> &amp;&amp; user.getGroupId() != <SPAN class="code-keyword">null</SPAN>) {
+		     UserGroupDO group = ServiceFactory.getInstance().getService(UserGroupService.class).findUserGroupById(user.getGroupId());
+		     <SPAN class="code-keyword">if</SPAN> (group != <SPAN class="code-keyword">null</SPAN> &amp;&amp; IS_ADMIN.equalsIgnoreCase(group.getIsAdmin())) {
+		         <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">true</SPAN>;
+		     }
+		}
+	    }
+	}
+	<SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">false</SPAN>;
+    }
+
+    <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">int</SPAN> getOrder() {
+         <SPAN class="code-keyword">return</SPAN> order;
+    }
+
+    /**
+     * 设置过滤执行的顺序
+     *
+     * @author:shaochuan.wangsc
+     * @date:2009-4-16
+     * @param order
+     */
+     <SPAN class="code-keyword">public</SPAN> void setOrder(<SPAN class="code-object">int</SPAN> order) {
+         <SPAN class="code-keyword">this</SPAN>.order = order;
+     }
+
+   /**
+    * 设置过滤的path
+    *
+    * @author:shaochuan.wangsc
+    * @date:2009-4-16
+    * @<SPAN class="code-keyword">return</SPAN>
+    */
+    <SPAN class="code-keyword">public</SPAN> void setFilterPathList(List&lt;<SPAN class="code-object">String</SPAN>&gt; filterList) {
+        <SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">String</SPAN> filterPath : filterList) {
+	    <SPAN class="code-keyword">this</SPAN>.filterPathList.add(filterPath);
+        }
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. xml相关配置举例：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java">&lt;!-- 过滤需要有管理员权限才能操作的页面 --&gt;
+&lt;bean id=<SPAN class="code-quote">"adminSecurityPipeline"</SPAN> class=<SPAN class="code-quote">"com.alibaba.japan.club.web.pipeline.security.AdminSecurityPipeline"</SPAN>&gt;
+    &lt;property name=<SPAN class="code-quote">"order"</SPAN> value=<SPAN class="code-quote">"5"</SPAN> /&gt;
+    &lt;property name=<SPAN class="code-quote">"filterPathList"</SPAN>&gt;
+        &lt;list&gt;
+            &lt;value&gt;/reply/editContent.htm&lt;/value&gt;
+	    &lt;value&gt;/admin/**/*.htm&lt;/value&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. 通过上面的<FONT color="#0000ff"><B>JapanEntrancePipeline</B></FONT>接口和<FONT color="#0000ff"><B>AdminSecurityPipeline</B></FONT>可以看出，<FONT color="#0000ff"><B>AdminSecurityPipeline</B></FONT>的执行顺序是排在第5位；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 过滤的URL为list元素中的内容（即只过滤list元素中的url，通过在<FONT color="#0000ff"><B>AdminSecurityPipeline</B></FONT>编码实现）。</P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-4.1%E6%A3%80%E6%9F%A5%E5%A4%9A%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"></A>4.1 检查多文件上传</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. <FONT color="#0000ff"><B>Spring</B></FONT>的多文件处理是封装了Apache的<FONT color="#0000ff"><B>commons-fileupload.jar</B></FONT>包实现的上传功能，并且可以设定上传文件的大小；如果文件太大则抛出异常，如果文件符合规格则将文件保存在<FONT color="#0000ff"><B>request</B></FONT>对象中，下面是框架实现的代码：<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT><FONT color="#000000">下面的代码是在</FONT><FONT color="#0000ff"><B>EntrancePipeline</B></FONT><FONT color="#000000">执行后执行。</FONT></P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java">processedRequest = checkMultipart(request);</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; B. 下面是<FONT color="#0000ff"><B>checkMultipart()</B></FONT>方法的实现：
+<BR clear="all"></P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> HttpServletRequest checkMultipart(HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> MultipartException {
+    <SPAN class="code-keyword">if</SPAN> (<SPAN class="code-keyword">this</SPAN>.multipartResolver != <SPAN class="code-keyword">null</SPAN> &amp;&amp; <SPAN class="code-keyword">this</SPAN>.multipartResolver.isMultipart(request)) {
+        <SPAN class="code-keyword">if</SPAN> (request <SPAN class="code-keyword">instanceof</SPAN> MultipartHttpServletRequest) {
+	    logger.debug(<SPAN class="code-quote">"Request is already a MultipartHttpServletRequest - <SPAN class="code-keyword">if</SPAN> not in a forward, "</SPAN> +
+	        <SPAN class="code-quote">"<SPAN class="code-keyword">this</SPAN> typically results from an additional MultipartFilter in web.xml"</SPAN>);
+	} <SPAN class="code-keyword">else</SPAN> {
+            <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">this</SPAN>.multipartResolver.resolveMultipart(request);
+        }
+    }
+    <SPAN class="code-comment">// If not returned before: <SPAN class="code-keyword">return</SPAN> original request.
+</SPAN>    <SPAN class="code-keyword">return</SPAN> request;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; C. 下面是<FONT color="#0000ff"><B>multipartResolver</B></FONT>.resolveMultipart()的实现：
+<BR clear="all"></P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> MultipartHttpServletRequest resolveMultipart(<SPAN class="code-keyword">final</SPAN> HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> MultipartException {
+    Assert.notNull(request, <SPAN class="code-quote">"Request must not be <SPAN class="code-keyword">null</SPAN>"</SPAN>);
+    <SPAN class="code-keyword">if</SPAN> (<SPAN class="code-keyword">this</SPAN>.resolveLazily) {
+        <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">new</SPAN> DefaultMultipartHttpServletRequest(request) {
+            <SPAN class="code-keyword">protected</SPAN> void initializeMultipart() {
+                MultipartParsingResult parsingResult = parseRequest(request);
+		setMultipartFiles(parsingResult.getMultipartFiles());
+		setMultipartParameters(parsingResult.getMultipartParameters());
+	   }
+        };
+    } <SPAN class="code-keyword">else</SPAN> {
+        MultipartParsingResult parsingResult = parseRequest(request);
+        <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">new</SPAN> DefaultMultipartHttpServletRequest(request, parsingResult.getMultipartFiles(), parsingResult.getMultipartParameters());
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; D. 下面是<FONT color="#0000ff"><B>parseRequest()</B></FONT>方法的实现：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> MultipartParsingResult parseRequest(HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> MultipartException {
+    <SPAN class="code-object">String</SPAN> encoding = determineEncoding(request);
+    FileUpload fileUpload = prepareFileUpload(encoding);
+    <SPAN class="code-keyword">try</SPAN> {
+        List fileItems = ((ServletFileUpload) fileUpload).parseRequest(request);
+        <SPAN class="code-keyword">return</SPAN> parseFileItems(fileItems, encoding);
+    } <SPAN class="code-keyword">catch</SPAN> (FileUploadBase.SizeLimitExceededException ex) {
+        <SPAN class="code-keyword">throw</SPAN> <SPAN class="code-keyword">new</SPAN> MaxUploadSizeExceededException(fileUpload.getSizeMax(), ex);
+    } <SPAN class="code-keyword">catch</SPAN> (FileUploadException ex) {
+        <SPAN class="code-keyword">throw</SPAN> <SPAN class="code-keyword">new</SPAN> MultipartException(<SPAN class="code-quote">"Could not parse multipart servlet request"</SPAN>, ex);
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT><FONT color="#000000">通过上面的代码我们可以看出，如果文件太大则抛出异常，如果文件符合规格则将文件保存在</FONT><FONT color="#0000ff"><B>request</B></FONT><FONT color="#000000">对象中。</FONT></P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp; E. 论坛多文件上传的XML配置：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java">&lt;!-- 设置 MultipartResolver --&gt;
+&lt;bean id=<SPAN class="code-quote">"multipartResolver"</SPAN> class=<SPAN class="code-quote">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</SPAN>&gt;
+    &lt;property name=<SPAN class="code-quote">"defaultEncoding"</SPAN> value=<SPAN class="code-quote">"UTF-8"</SPAN>/&gt;
+    &lt;property name=<SPAN class="code-quote">"maxUploadSize"</SPAN> value=<SPAN class="code-quote">"358400"</SPAN>/&gt;
+    &lt;property name=<SPAN class="code-quote">"maxInMemorySize"</SPAN> value=<SPAN class="code-quote">"30720"</SPAN>/&gt;
+&lt;/bean&gt;</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT><FONT color="#000000">如果没有设置上面的</FONT><FONT color="#3300ff"><B><EM>CommonsMultipartResolver</EM></B></FONT><FONT color="#000000">类，那么上传文件功能则不会起作用。</FONT></P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-5.1%E9%80%9A%E8%BF%87HandlerMapping%E8%8E%B7%E5%8F%96Controller"></A>5.1 通过HandlerMapping获取Controller</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. 论坛项目的<FONT color="#0000ff"><B>HandlerMapping</B></FONT>类图如下：</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/tempGif2.gif" align="absmiddle" border="0"><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. 下面是获得<FONT color="#0000ff"><B>Spring MVC</B></FONT>的<FONT color="#0000ff"><B>Controller</B></FONT>实现：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-comment">// Determine handler <SPAN class="code-keyword">for</SPAN> the current request.
+</SPAN>mappedHandler = getHandler(processedRequest, <SPAN class="code-keyword">false</SPAN>);
+<SPAN class="code-keyword">if</SPAN> (mappedHandler == <SPAN class="code-keyword">null</SPAN> || mappedHandler.getHandler() == <SPAN class="code-keyword">null</SPAN>) {
+    <SPAN class="code-comment">// Do we need view name translation?
+</SPAN>    mv = <SPAN class="code-keyword">new</SPAN> ModelAndView();
+    mv.setViewName(getDefaultViewName(request));
+    render(mv, processedRequest, response);
+    <SPAN class="code-keyword">return</SPAN>;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. 下面是<FONT color="#0000ff"><B>getHandler()</B></FONT>方法的实现：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> HandlerExecutionChain getHandler(HttpServletRequest request, <SPAN class="code-object">boolean</SPAN> cache) <SPAN class="code-keyword">throws</SPAN> Exception {
+    HandlerExecutionChain handler = (HandlerExecutionChain) request.getAttribute(HANDLER_EXECUTION_CHAIN_ATTRIBUTE);
+    <SPAN class="code-keyword">if</SPAN> (handler != <SPAN class="code-keyword">null</SPAN>) {
+        <SPAN class="code-keyword">if</SPAN> (!cache) {
+            request.removeAttribute(HANDLER_EXECUTION_CHAIN_ATTRIBUTE);
+        }
+        <SPAN class="code-keyword">return</SPAN> handler;
+    }
+
+    Iterator it = <SPAN class="code-keyword">this</SPAN>.handlerMappings.iterator();
+    <SPAN class="code-keyword">while</SPAN> (it.hasNext()) {
+        HandlerMapping hm = (HandlerMapping) it.next();
+        <SPAN class="code-keyword">if</SPAN> (logger.isTraceEnabled()) {
+            logger.trace(<SPAN class="code-quote">"Testing handler map ["</SPAN> + hm  + <SPAN class="code-quote">"] in DispatcherServlet with name '"</SPAN> + getServletName() + <SPAN class="code-quote">"'"</SPAN>);
+        }
+        handler = hm.getHandler(request);
+        <SPAN class="code-keyword">if</SPAN> (handler != <SPAN class="code-keyword">null</SPAN>) {
+            <SPAN class="code-keyword">if</SPAN> (cache) {
+                request.setAttribute(HANDLER_EXECUTION_CHAIN_ATTRIBUTE, handler);
+            }
+            <SPAN class="code-keyword">return</SPAN> handler;
+        }
+    }
+    <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">null</SPAN>;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. 因为日文站论坛项目中的<FONT color="#0000ff"><B>HandlerMapping</B></FONT>(com.alibaba.japan.club.runtime.springmvc.servlet.handler.<FONT color="#0000ff"><B>JapanSimpleUrlHandlerMapping</B></FONT>)是扩展自<FONT color="#0000ff"><B>SimpleUrlHandlerMapping</B></FONT>, <FONT color="#0000ff"><B>hm.getHandler()</B></FONT>方法的实现如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">final</SPAN> HandlerExecutionChain getHandler(HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-object">Object</SPAN> handler = getHandlerInternal(request);
+    <SPAN class="code-keyword">if</SPAN> (handler == <SPAN class="code-keyword">null</SPAN>) {
+        handler = getDefaultHandler();
+    }
+    <SPAN class="code-keyword">if</SPAN> (handler == <SPAN class="code-keyword">null</SPAN>) {
+        <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">null</SPAN>;
+    }
+    <SPAN class="code-comment">// Bean name or resolved handler?
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (handler <SPAN class="code-keyword">instanceof</SPAN> <SPAN class="code-object">String</SPAN>) {
+        <SPAN class="code-object">String</SPAN> handlerName = (<SPAN class="code-object">String</SPAN>) handler;
+        handler = getApplicationContext().getBean(handlerName);
+    }
+    <SPAN class="code-keyword">return</SPAN> getHandlerExecutionChain(handler, request);
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E. <FONT color="#0000ff"><B>getHandlerInternal()</B></FONT>方法实现如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> <SPAN class="code-object">Object</SPAN> getHandlerInternal(HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-object">String</SPAN> lookupPath = <SPAN class="code-keyword">this</SPAN>.urlPathHelper.getLookupPathForRequest(request);
+    <SPAN class="code-object">Object</SPAN> handler = lookupHandler(lookupPath, request);
+    <SPAN class="code-keyword">if</SPAN> (handler == <SPAN class="code-keyword">null</SPAN>) {
+        <SPAN class="code-comment">// We need to care <SPAN class="code-keyword">for</SPAN> the <SPAN class="code-keyword">default</SPAN> handler directly, since we need to
+</SPAN>        <SPAN class="code-comment">// expose the PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE <SPAN class="code-keyword">for</SPAN> it as well.
+</SPAN>        <SPAN class="code-object">Object</SPAN> rawHandler = <SPAN class="code-keyword">null</SPAN>;
+        <SPAN class="code-keyword">if</SPAN> (<SPAN class="code-quote">"/"</SPAN>.equals(lookupPath)) {
+            rawHandler = getRootHandler();
+        }
+        <SPAN class="code-keyword">if</SPAN> (rawHandler == <SPAN class="code-keyword">null</SPAN>) {
+            rawHandler = getDefaultHandler();
+        }
+        <SPAN class="code-keyword">if</SPAN> (rawHandler != <SPAN class="code-keyword">null</SPAN>) {
+            validateHandler(rawHandler, request);
+            handler = buildPathExposingHandler(rawHandler, lookupPath);
+        }
+    }
+    <SPAN class="code-keyword">if</SPAN> (handler != <SPAN class="code-keyword">null</SPAN> &amp;&amp; logger.isDebugEnabled()) {
+        logger.debug(<SPAN class="code-quote">"Mapping ["</SPAN> + lookupPath + <SPAN class="code-quote">"] to handler '"</SPAN> + handler + <SPAN class="code-quote">"'"</SPAN>);
+    } <SPAN class="code-keyword">else</SPAN> <SPAN class="code-keyword">if</SPAN> (handler == <SPAN class="code-keyword">null</SPAN> &amp;&amp; logger.isTraceEnabled()) {
+        logger.trace(<SPAN class="code-quote">"No handler mapping found <SPAN class="code-keyword">for</SPAN> ["</SPAN> + lookupPath + <SPAN class="code-quote">"]"</SPAN>);
+    }
+    <SPAN class="code-keyword">return</SPAN> handler;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F. <FONT color="#0000ff"><B>lookupHandler()</B></FONT>方法实现如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">protected</SPAN> <SPAN class="code-object">Object</SPAN> lookupHandler(<SPAN class="code-object">String</SPAN> urlPath, HttpServletRequest request) <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-comment">// Direct match?
+</SPAN>    <SPAN class="code-object">Object</SPAN> handler = <SPAN class="code-keyword">this</SPAN>.handlerMap.get(urlPath);
+    <SPAN class="code-keyword">if</SPAN> (handler != <SPAN class="code-keyword">null</SPAN>) {
+        validateHandler(handler, request);
+        <SPAN class="code-keyword">return</SPAN> buildPathExposingHandler(handler, urlPath);
+    }
+    <SPAN class="code-comment">// Pattern match?
+</SPAN>    <SPAN class="code-object">String</SPAN> bestPathMatch = <SPAN class="code-keyword">null</SPAN>;
+    <SPAN class="code-keyword">for</SPAN> (Iterator it = <SPAN class="code-keyword">this</SPAN>.handlerMap.keySet().iterator(); it.hasNext();) {
+        <SPAN class="code-object">String</SPAN> registeredPath = (<SPAN class="code-object">String</SPAN>) it.next();
+        <SPAN class="code-keyword">if</SPAN> (getPathMatcher().match(registeredPath, urlPath) &amp;&amp; (bestPathMatch == <SPAN class="code-keyword">null</SPAN> || bestPathMatch.length() &lt; registeredPath.length())) {
+            bestPathMatch = registeredPath;
+        }
+    }
+    <SPAN class="code-keyword">if</SPAN> (bestPathMatch != <SPAN class="code-keyword">null</SPAN>) {
+        handler = <SPAN class="code-keyword">this</SPAN>.handlerMap.get(bestPathMatch);
+        validateHandler(handler, request);
+        <SPAN class="code-object">String</SPAN> pathWithinMapping = getPathMatcher().extractPathWithinPattern(bestPathMatch, urlPath);
+        <SPAN class="code-keyword">return</SPAN> buildPathExposingHandler(handler, pathWithinMapping);
+    }
+    <SPAN class="code-comment">// No handler found...
+</SPAN>    <SPAN class="code-keyword">return</SPAN> <SPAN class="code-keyword">null</SPAN>;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. 在上面<FONT color="#0000ff"><B>lookupHandler()</B></FONT>方法中的 <FONT color="#006600"><B>// Direct match?</B></FONT> 我们可以看得出如下步骤：<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 首先，先从Map中查找是否有注册过的<FONT color="#0000ff"><B>Controller</B></FONT>，如果发现则直接返回；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 如果要是没有发现，则通过配置过的Ant风格的匹配表达式来进行匹配，以最长匹配原则为优先；<BR>
+<FONT color="#006600"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> 4. <FONT color="#006600"><B>// Pattern match?</B></FONT> 下面注释的代码段中就可以看得出"最长匹配原则"。<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. 如果想研究的同学可以通过<FONT color="#0000ff"><B>debug</B></FONT>进行深一步骤的研究。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>注</B></FONT><FONT color="#990033"><B>：</B></FONT><FONT color="#000000">1. 通过上面的代码中，值得注意的是：</FONT><BR>
+<FONT color="#990000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT> <FONT color="#000000">2. 如果获得到了</FONT><FONT color="#0000cc"><B>mappedHandler</B></FONT><FONT color="#000000">对象，则继续执行；</FONT><BR>
+<FONT color="#990000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT> <FONT color="#000000">3. 否则，执行</FONT><FONT color="#0000ff"><B>render()</B></FONT><FONT color="#000000">方法返回视图（具体返回的视图是通过</FONT><FONT color="#0000ff"><B>request</B></FONT><FONT color="#000000">请求的url来进行区别的）；</FONT><BR>
+<FONT color="#990000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT> <FONT color="#000000">如：</FONT><FONT color="#0000ff"><B><SPAN class="nobr"><A href="http://host:port/index.htm" rel="nofollow">http://host:port/index.htm<SUP><IMG class="rendericon" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/linkext7.gif" height="7" width="7" align="absmiddle" alt="" border="0"></SUP></A></SPAN></B></FONT> <FONT color="#0000ff"><B>--&gt; /home/index.ftl</B></FONT><FONT color="#000000">，就是通过此段代码实现的</FONT><FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">完成的对静态模版文件的调用；</FONT><BR>
+<FONT color="#0000ff"><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B></FONT> <FONT color="#000000">4.</FONT> <FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">自身是不支持这样的功能的，</FONT><FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">自身只支持</FONT><FONT color="#0000ff"><B>request</B></FONT><FONT color="#000000">到</FONT><FONT color="#0000ff"><B>handler</B></FONT><FONT color="#000000">的请求，否则会返回找不到页面。</FONT><BR clear="all"></P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-6.1%E8%B0%83%E7%94%A8%E6%8B%A6%E6%88%AA%E5%99%A8%E5%8F%8A%E8%BF%9B%E8%A1%8C%E5%A4%84%E7%90%86"></A>6.1 调用拦截器及进行处理</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. 下面是拦截器的调用和执行过程，如下：&nbsp;</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-comment">// Apply preHandle methods of registered interceptors.
+</SPAN>HandlerInterceptor[] interceptors = mappedHandler.getInterceptors();
+<SPAN class="code-keyword">if</SPAN> (interceptors != <SPAN class="code-keyword">null</SPAN>) {
+    <SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">int</SPAN> i = 0; i &lt; interceptors.length; i++) {
+        HandlerInterceptor interceptor = interceptors[i];
+        <SPAN class="code-keyword">if</SPAN> (!interceptor.preHandle(processedRequest, response, mappedHandler.getHandler())) {
+            triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, <SPAN class="code-keyword">null</SPAN>);
+            <SPAN class="code-keyword">return</SPAN>;
+        }
+        interceptorIndex = i;
+    }
+}
+
+<SPAN class="code-comment">// Actually invoke the handler.
+</SPAN>HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
+mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+<SPAN class="code-comment">// Do we need view name translation?
+</SPAN><SPAN class="code-keyword">if</SPAN> (mv != <SPAN class="code-keyword">null</SPAN> &amp;&amp; !mv.hasView()) {
+    mv.setViewName(getDefaultViewName(request));
+}
+
+<SPAN class="code-comment">// Apply postHandle methods of registered interceptors.
+</SPAN><SPAN class="code-keyword">if</SPAN> (interceptors != <SPAN class="code-keyword">null</SPAN>) {
+    <SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">int</SPAN> i = interceptors.length - 1; i &gt;= 0; i--) {
+        HandlerInterceptor interceptor = interceptors[i];
+        interceptor.postHandle(processedRequest, response, mappedHandler.getHandler(), mv);
+    }
+}
+
+<SPAN class="code-comment">// render template
+</SPAN>render(mv, processedRequest, response);
+<SPAN class="code-comment">// Trigger after-completion <SPAN class="code-keyword">for</SPAN> successful outcome.
+</SPAN>triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, <SPAN class="code-keyword">null</SPAN>);
+<SPAN class="code-keyword">return</SPAN>;</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; B. 拦截器的接口定义如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">interface</SPAN> HandlerInterceptor {
+&nbsp;&nbsp; <SPAN class="code-comment">// 在执行目标controller之前执行, 如果返回false则目标controller不执行
+</SPAN>&nbsp;&nbsp;&nbsp; <SPAN class="code-object">boolean</SPAN> preHandle(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">Object</SPAN> handler) <SPAN class="code-keyword">throws</SPAN> Exception;
+&nbsp;&nbsp; <SPAN class="code-comment">// 在执行目标controller之后执行
+</SPAN>&nbsp;&nbsp;&nbsp; void postHandle(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">Object</SPAN> handler, ModelAndView modelAndView) <SPAN class="code-keyword">throws</SPAN> Exception;
+&nbsp;&nbsp; <SPAN class="code-comment">// 在执行拦截器完成后执行（不是controller执行完成后执行哦！）
+</SPAN>&nbsp;&nbsp;&nbsp; void afterCompletion(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">Object</SPAN> handler, Exception ex) <SPAN class="code-keyword">throws</SPAN> Exception;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. 通过上面的A与B说明，我们可以看得出来：</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. 在执行<FONT color="#0000ff"><B>controller</B></FONT>之前是先执行拦截器的<FONT color="#0000ff"><B>preHandle()</B></FONT>方法；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 然后，执行完目标<FONT color="#0000ff"><B>controller</B></FONT>；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 之后，执行拦截器的<FONT color="#0000ff"><B>postHandle</B></FONT>方法；<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 最后，拦截器执行完成后执行<FONT color="#0000ff"><B>afterCompletion()</B></FONT>方法。</P>
+
+<P>&nbsp; &nbsp; &nbsp; D.&nbsp; 目前先不考虑如果发生异常则如何处理，在后续我们会详细说明发生异常后的详细处理方法。</P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-7.1%E6%89%A7%E8%A1%8CController%E5%B9%B6%E8%BF%94%E5%9B%9E%E8%A7%86%E5%9B%BE%E5%AF%B9%E8%B1%A1"></A>7.1 执行Controller并返回视图对象</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. 获得Handler并执行，代码如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-comment">// Actually invoke the handler.
+</SPAN>HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
+mv = ha.handle(processedRequest, response, mappedHandler.getHandler());
+
+<SPAN class="code-comment">// Do we need view name translation?
+</SPAN><SPAN class="code-keyword">if</SPAN> (mv != <SPAN class="code-keyword">null</SPAN> &amp;&amp; !mv.hasView()) {
+    mv.setViewName(getDefaultViewName(request));
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. 上面的代码要从下面三部分来看，如下：<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1） 获得HandlerAdapter，HandlerAdapter的接口和默认实现类，如下：</P>
+
+<P>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1. HandlerAdapter接口如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">interface</SPAN> HandlerAdapter {
+
+    /**
+     * Given a handler instance, <SPAN class="code-keyword">return</SPAN> whether or not <SPAN class="code-keyword">this</SPAN> HandlerAdapter can
+     * support it. Typical HandlerAdapters will base the decision on the handler
+     * type. HandlerAdapters will usually only support one handler type each.
+     * &lt;p&gt;A typical implementation:
+     * &lt;p&gt;&lt;code&gt;
+     * <SPAN class="code-keyword">return</SPAN> (handler <SPAN class="code-keyword">instanceof</SPAN> MyHandler);
+     * &lt;/code&gt;
+     * @param handler handler object to check
+     * @<SPAN class="code-keyword">return</SPAN> whether or not <SPAN class="code-keyword">this</SPAN> object can use the given handler
+     */
+     <SPAN class="code-object">boolean</SPAN> supports(<SPAN class="code-object">Object</SPAN> handler);
+
+    /**
+     * Use the given handler to handle <SPAN class="code-keyword">this</SPAN> request.
+     * The workflow that is required may vary widely.
+     * @param request current HTTP request
+     * @param response current HTTP response
+     * @param handler handler to use. This object must have previously been passed
+     * to the &lt;code&gt;supports&lt;/code&gt; method of <SPAN class="code-keyword">this</SPAN> <SPAN class="code-keyword">interface</SPAN>, which must have
+     * returned &lt;code&gt;<SPAN class="code-keyword">true</SPAN>&lt;/code&gt;.
+     * @<SPAN class="code-keyword">throws</SPAN> Exception in <SPAN class="code-keyword">case</SPAN> of errors
+     * @<SPAN class="code-keyword">return</SPAN> ModelAndView object with the name of the view and the required
+     * model data, or &lt;code&gt;<SPAN class="code-keyword">null</SPAN>&lt;/code&gt; <SPAN class="code-keyword">if</SPAN> the request has been handled directly
+     */
+     ModelAndView handle(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">Object</SPAN> handler) <SPAN class="code-keyword">throws</SPAN> Exception;
+
+    /**
+     * Same contract as <SPAN class="code-keyword">for</SPAN> HttpServlet's &lt;code&gt;getLastModified&lt;/code&gt; method.
+     * Can simply <SPAN class="code-keyword">return</SPAN> -1 <SPAN class="code-keyword">if</SPAN> there's no support in the handler class.
+     * @param request current HTTP request
+     * @param handler handler to use
+     * @<SPAN class="code-keyword">return</SPAN> the lastModified value <SPAN class="code-keyword">for</SPAN> the given handler
+     * @see javax.servlet.http.HttpServlet#getLastModified
+     * @see org.springframework.web.servlet.mvc.LastModified#getLastModified
+     */
+     <SPAN class="code-object">long</SPAN> getLastModified(HttpServletRequest request, <SPAN class="code-object">Object</SPAN> handler);
+
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. HandlerAdapter实现类如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> class SimpleControllerHandlerAdapter <SPAN class="code-keyword">implements</SPAN> HandlerAdapter {
+
+    <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">boolean</SPAN> supports(<SPAN class="code-object">Object</SPAN> handler) {
+        <SPAN class="code-keyword">return</SPAN> (handler <SPAN class="code-keyword">instanceof</SPAN> Controller);
+    }
+
+    <SPAN class="code-keyword">public</SPAN> ModelAndView handle(HttpServletRequest request, HttpServletResponse response, <SPAN class="code-object">Object</SPAN> handler) <SPAN class="code-keyword">throws</SPAN> Exception {
+        <SPAN class="code-keyword">return</SPAN> ((Controller) handler).handleRequest(request, response);
+    }
+
+    <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">long</SPAN> getLastModified(HttpServletRequest request, <SPAN class="code-object">Object</SPAN> handler) {
+        <SPAN class="code-keyword">if</SPAN> (handler <SPAN class="code-keyword">instanceof</SPAN> LastModified) {
+            <SPAN class="code-keyword">return</SPAN> ((LastModified) handler).getLastModified(request);
+        }
+        <SPAN class="code-keyword">return</SPAN> -1L;
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. <FONT color="#0000ff"><B>SimpleControllerHandlerAdapter</B></FONT><FONT color="#000000">是</FONT><FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">框架默认的</FONT><FONT color="#0000ff"><B>HandlerAdapter</B></FONT>。<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. <FONT color="#000000">通过上面的调用关系，我们可以看出</FONT><FONT color="#0000ff"><B>Spring MVC</B></FONT><FONT color="#000000">的灵活设计，可以通过扩展自己的</FONT><FONT color="#0000ff"><B>HandlerAdapte</B></FONT><FONT color="#000000">r</FONT><FONT color="#000000">来实现定制类、定制方法的执行。</FONT><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. <FONT color="#000000">不过，不建议自己实现类似的功能，因为实现自己的功能会增加员工的学习成本而且资料和以往的经验往往就用不上了。</FONT></P>
+
+<P>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 2）&nbsp; <FONT color="#0000ff"><B>HandlerAdapter</B></FONT>中<FONT color="#0000ff"><B>handle</B></FONT>方法的执行（一看就知道作用，不再多说）。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3）&nbsp; 设置<FONT color="#0000ff"><B>ModelAndView</B></FONT>对象，如下：
+<BR clear="all"></P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">public</SPAN> class ModelAndView {
+
+    /** View instance or view name <SPAN class="code-object">String</SPAN> */
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-object">Object</SPAN> view;
+
+    /** Model Map */
+    <SPAN class="code-keyword">private</SPAN> ModelMap model;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. <FONT color="#0000ff"><B>view</B></FONT>对象主要都是以<FONT color="#0000ff"><B>String</B></FONT>类型进行存储，<FONT color="#0000ff"><B>model</B></FONT>对象主要都是以<FONT color="#0000ff"><B>HashMap</B></FONT>类型进行存储。<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 2. <FONT color="#0000ff"><B>view</B></FONT>对象如果以String类型进行存储的情况下，有三种情况，如下：<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1) <FONT color="#0000ff"><B>"/home/index"</B></FONT> --&gt; 这种方式是直接访问系统中的<FONT color="#0000ff"><B>/home/index</B></FONT>所对应的页面文件。<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2) <FONT color="#0000ff"><B>"redirect:/index.htm"</B></FONT> --&gt; 这种方式是重定向到应用的<FONT color="#0000ff"><B>/index.htm</B></FONT>页面。<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3) <FONT color="#0000ff"><B>"forward:/index.htm"</B></FONT> --&gt; 这种方式是内部跳转到系统的<FONT color="#0000ff"><B>/index.htm</B></FONT>页面请求。<BR>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 注：<FONT color="#0000ff"><B>redirect</B></FONT>与<FONT color="#0000ff"><B>forward</B></FONT>的区别如果不清楚的同学请查相关资料。</P>
+
+<H6><A name="%E4%B8%89%E3%80%81SummerCool%E8%AF%B7%E6%B1%82%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E-8.1ExceptionPipeline%E5%8A%9F%E8%83%BD%E5%8F%8A%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E"></A>8.1 ExceptionPipeline功能及相关说明</H6>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A. 捕获异常并执行ExceptionPipeline，代码如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-comment">// render template
+</SPAN>        render(mv, processedRequest, response);
+        <SPAN class="code-comment">// Trigger after-completion <SPAN class="code-keyword">for</SPAN> successful outcome.
+</SPAN>        triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, <SPAN class="code-keyword">null</SPAN>);
+        <SPAN class="code-keyword">return</SPAN>;
+    } <SPAN class="code-keyword">catch</SPAN> (ModelAndViewDefiningException ex) {
+        <SPAN class="code-comment">// triggerAfterException
+</SPAN>        triggerAfterException(processedRequest, response, ex);
+
+        logger.error(<SPAN class="code-quote">"ModelAndViewDefiningException encountered"</SPAN>, ex);
+        mv = ex.getModelAndView();
+        exception = ex;
+    } <SPAN class="code-keyword">catch</SPAN> (Exception ex) {
+        <SPAN class="code-comment">// triggerAfterException
+</SPAN>        triggerAfterException(processedRequest, response, ex);
+
+        logger.error(<SPAN class="code-quote">"Exception encountered"</SPAN>, ex);
+        <SPAN class="code-object">Object</SPAN> handler = (mappedHandler != <SPAN class="code-keyword">null</SPAN> ? mappedHandler.getHandler() : <SPAN class="code-keyword">null</SPAN>);
+        mv = processHandlerException(processedRequest, response, handler, ex);
+        errorView = (mv != <SPAN class="code-keyword">null</SPAN>);
+        exception = ex;
+    }
+
+    <SPAN class="code-comment">// Did the handler <SPAN class="code-keyword">return</SPAN> a view to render?
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (mv != <SPAN class="code-keyword">null</SPAN> &amp;&amp; !mv.wasCleared()) {
+        render(mv, processedRequest, response);
+        <SPAN class="code-keyword">if</SPAN> (errorView) {
+            WebUtils.clearErrorRequestAttributes(request);
+        }
+    } <SPAN class="code-keyword">else</SPAN> {
+        <SPAN class="code-keyword">if</SPAN> (logger.isDebugEnabled()) {
+            logger.debug(<SPAN class="code-quote">"Null ModelAndView returned to DispatcherServlet with name '"</SPAN> + getServletName()
+            + <SPAN class="code-quote">"': assuming HandlerAdapter completed request handling"</SPAN>);
+        }
+        <SPAN class="code-keyword">throw</SPAN> exception;
+    }
+
+    <SPAN class="code-comment">// Trigger after-completion <SPAN class="code-keyword">for</SPAN> successful outcome.
+</SPAN>    triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, <SPAN class="code-keyword">null</SPAN>);
+} <SPAN class="code-keyword">catch</SPAN> (Exception ex) {
+    <SPAN class="code-comment">// triggerAfterException
+</SPAN>    triggerAfterException(processedRequest, response, ex);
+    <SPAN class="code-comment">// Trigger after-completion <SPAN class="code-keyword">for</SPAN> thrown exception.
+</SPAN>    triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, ex);
+    <SPAN class="code-keyword">throw</SPAN> ex;
+} <SPAN class="code-keyword">catch</SPAN> (Error err) {
+    <SPAN class="code-comment">// triggerAfterException
+</SPAN>    triggerAfterException(processedRequest, response, err);
+
+    ServletException ex = <SPAN class="code-keyword">new</SPAN> NestedServletException(<SPAN class="code-quote">"Handler processing failed"</SPAN>, err);
+    <SPAN class="code-comment">// Trigger after-completion <SPAN class="code-keyword">for</SPAN> thrown exception.
+</SPAN>    logger.error(<SPAN class="code-quote">"Error encountered"</SPAN>, ex);
+    triggerAfterCompletion(mappedHandler, interceptorIndex, processedRequest, response, ex);
+    <SPAN class="code-keyword">throw</SPAN> ex;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B. <FONT color="#0000cc"><B>triggerAfterException()</B></FONT>方法实现如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java">/**
+* 如果发生异常,则先执行此方法
+*
+* @author:shaochuan.wangsc
+* @date:2009-4-18
+* @param throwable
+*/
+<SPAN class="code-keyword">private</SPAN> void triggerAfterException(HttpServletRequest request, HttpServletResponse response, Throwable throwable)
+        <SPAN class="code-keyword">throws</SPAN> Exception {
+    <SPAN class="code-comment">// execute exceptionPipelines
+</SPAN>    <SPAN class="code-keyword">if</SPAN> (<SPAN class="code-keyword">this</SPAN>.exceptionPipelines != <SPAN class="code-keyword">null</SPAN>) {
+        <SPAN class="code-keyword">for</SPAN> (<SPAN class="code-object">Object</SPAN> object : exceptionPipelines) {
+            JapanExceptionPipeline exceptionPipeline = (JapanExceptionPipeline) object;
+            exceptionPipeline.handleExceptionInternal(request, response, throwable);
+        }
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. 通过上面的代码我们可以看得出，如果在<FONT color="#0000cc"><B>render()</B></FONT>视图时发生异常，则<FONT color="#0000cc"><B>triggerAfterException()</B></FONT>执行并调用ExceptionPipelie。<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. exceptionPipeline.handleExceptionInternal(request, response, throwable);<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 通过上面的代码可以看出，只要实现了<FONT color="#0000ff"><B>JapanExceptionPipelin</B></FONT>接口，就可对捕获的异常进行任何处理（如：捕获异常后发送邮件；捕获异常后将异常转义并在页面隐藏显示，便于异常调式）。</P>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C. <FONT color="#0000ff"><B>JapanExceptionPipeline</B></FONT>接口定义如下：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">package</SPAN> com.alibaba.japan.club.runtime.springmvc.pipeline;
+
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletRequest;
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletResponse;
+
+<SPAN class="code-keyword">import</SPAN> org.springframework.core.PriorityOrdered;
+
+/**
+&nbsp;*
+&nbsp;* @author:shaochuan.wangsc
+&nbsp;* @date:2009-4-15
+&nbsp;*
+&nbsp;*/
+<SPAN class="code-keyword">public</SPAN> <SPAN class="code-keyword">interface</SPAN> JapanExceptionPipeline <SPAN class="code-keyword">extends</SPAN> PriorityOrdered {
+
+&nbsp;&nbsp; &nbsp;/**
+&nbsp;&nbsp; &nbsp; * 如果发生异常,则会执行该方法来对异常信息进行处理
+&nbsp;&nbsp; &nbsp; *
+&nbsp;&nbsp; &nbsp; * @author:shaochuan.wangsc
+&nbsp;&nbsp; &nbsp; * @date:2009-4-18
+&nbsp;&nbsp; &nbsp; * @param throwable
+&nbsp;&nbsp; &nbsp; */
+&nbsp;&nbsp; &nbsp;<SPAN class="code-keyword">public</SPAN> void handleExceptionInternal(HttpServletRequest request, HttpServletResponse response, Throwable throwable)
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;<SPAN class="code-keyword">throws</SPAN> Exception;
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D. <FONT color="#0000ff"><B>JapanExceptionPipeline</B></FONT>应用举例：</P>
+<DIV class="code panel" style="border-width: 1px;"><DIV class="codeContent panelContent">
+<PRE class="code-java"><SPAN class="code-keyword">package</SPAN> com.alibaba.japan.club.web.pipeline.exception;
+
+<SPAN class="code-keyword">import</SPAN> java.io.PrintWriter;
+<SPAN class="code-keyword">import</SPAN> java.io.StringWriter;
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletRequest;
+<SPAN class="code-keyword">import</SPAN> javax.servlet.http.HttpServletResponse;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.biz.common.util.StringSplitUtil;
+<SPAN class="code-keyword">import</SPAN> com.alibaba.japan.club.runtime.springmvc.pipeline.JapanExceptionPipeline;
+
+<SPAN class="code-keyword">public</SPAN> class MonitorExceptionPipeline <SPAN class="code-keyword">implements</SPAN> JapanExceptionPipeline {
+
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-keyword">static</SPAN> <SPAN class="code-keyword">final</SPAN> <SPAN class="code-object">String</SPAN> EXCEPTION_BASE64_ENCODED = <SPAN class="code-quote">"base64EncodedException"</SPAN>;
+
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-object">int</SPAN> order;
+
+    <SPAN class="code-keyword">public</SPAN> void handleExceptionInternal(HttpServletRequest request, HttpServletResponse response, Throwable throwable)
+            <SPAN class="code-keyword">throws</SPAN> Exception {
+        <SPAN class="code-object">String</SPAN> stackTrace = (getStackTrace(throwable));
+
+        request.setAttribute(EXCEPTION_BASE64_ENCODED, StringSplitUtil.base64Encode(stackTrace));
+        <SPAN class="code-object">System</SPAN>.err.println(<SPAN class="code-quote">"MonitorExceptionPipeline:"</SPAN> + <SPAN class="code-object">System</SPAN>.getProperty(<SPAN class="code-quote">"line.separator"</SPAN>) + stackTrace);
+    }
+
+    /**
+    * 取出exception中的信息
+    *
+    * @param exception
+    * @<SPAN class="code-keyword">return</SPAN>
+    */
+    <SPAN class="code-keyword">private</SPAN> <SPAN class="code-object">String</SPAN> getStackTrace(Throwable exception) {
+        StringWriter sw = <SPAN class="code-keyword">null</SPAN>;
+        PrintWriter pw = <SPAN class="code-keyword">null</SPAN>;
+        <SPAN class="code-keyword">try</SPAN> {
+            sw = <SPAN class="code-keyword">new</SPAN> StringWriter();
+            pw = <SPAN class="code-keyword">new</SPAN> PrintWriter(sw);
+            exception.printStackTrace(pw);
+            <SPAN class="code-keyword">return</SPAN> sw.toString();
+        } <SPAN class="code-keyword">finally</SPAN> {
+            <SPAN class="code-keyword">if</SPAN> (pw != <SPAN class="code-keyword">null</SPAN>) {
+                pw.close();
+            }
+	}
+    }
+
+    <SPAN class="code-keyword">public</SPAN> void setOrder(<SPAN class="code-object">int</SPAN> order) {
+        <SPAN class="code-keyword">this</SPAN>.order = order;
+    }
+
+    <SPAN class="code-keyword">public</SPAN> <SPAN class="code-object">int</SPAN> getOrder() {
+        <SPAN class="code-keyword">return</SPAN> order;
+    }
+}</PRE>
+</DIV></DIV>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#990033"><B>说明：</B></FONT>1. 通过String stackTrace = (getStackTrace(throwable)); 代码先获得异常信息中的堆载信息。<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 通过request.setAttribute(EXCEPTION_BASE64_ENCODED, StringSplitUtil.base64Encode(stackTrace)); 代码将异常信息放到request对象中。<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 通过System.err.println("MonitorExceptionPipeline:" + System.getProperty("line.separator") + stackTrace); 代码将异常信息打印到控制台。</P>
+</DIV>
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+    rdf:about="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420"
+    dc:identifier="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420"
+    dc:title="三、Summer Cool请求工作流程及相关说明"
+    trackback:ping="http://b2b-doc.alibaba-inc.com/rpc/trackback/30179420"/>
+</rdf:RDF>
+-->
+        
+
+<!--
+    Root decorator: all decisions about how a page is to be decorated via the
+                    inline decoration begins here.
+-->
+
+
+
+<!--
+    Switch based upon the context. However, for now, just delegate to a decorator
+    identified directly by the context.
+-->
+
+
+    
+    
+
+<DIV class="wiki-content" style="margin-right:10px;">
+    <P style="clear: both"><!-- comments should always display underneath the content. we should have a 'clear:both' here just in case there are floats or aligned images in the content -->
+
+    
+    
+    
+    
+                                        </P><DIV style="margin-top: 30px;">
+                <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420&showComments=true&showCommentArea=true#addcomment"><IMG src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/add_comment_16.gif" height="16" width="16" border="0" align="absmiddle"></A>
+                <A href="http://b2b-doc.alibaba-inc.com/pages/viewpage.action?pageId=30179420&showComments=true&showCommentArea=true#addcomment">Add Comment</A>
+                </DIV>
+                        </DIV>
+                            </DIV>
+                        </TD>
+                            
+    
+        
+    
+                                                </TR>
+                </TBODY></TABLE>
+                <!-- End inner content table -->
+            </TD>
+        </TR>
+    </TBODY></TABLE>
+</DIV>
+<DIV id="footer">
+                                        <UL id="poweredby">
+        <LI>Powered by <A href="http://www.atlassian.com/software/confluence" class="smalltext">Atlassian Confluence</A> 2.8.1, the <A href="http://www.atlassian.com/software/confluence" class="smalltext">Enterprise Wiki</A>.</LI>
+        <LI><A href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="smalltext">Bug/feature request</A> –</LI>
+        <LI><A href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="smalltext">Atlassian news</A> –</LI>
+        <LI><A href="http://b2b-doc.alibaba-inc.com/administrators.action">Contact administrators</A></LI>
+    </UL>
+
+    <!-- delay the loading of large javascript files to the end so that they don't interfere with the loading of page content -->
+    <SPAN class="hidden scripts">
+        <SCRIPT type="text/javascript">var domainName = 'http://b2b-doc.alibaba-inc.com'; var entityId = '30179420'; var spaceKey = 'jcbu'</SCRIPT>
+        <SCRIPT type="text/javascript" src="./三、Summer Cool请求工作流程及相关说明 - Confluence_files/labels-javascript"></SCRIPT>
+        <SCRIPT>new Ajax.Autocompleter('labelName', 'labelsAutocompleteList', '30179420', { tokens: new Array(',', ' '), dwrFunction: GenerateAutocompleteLabelsListForEntity.autocompleteLabels});</SCRIPT>
+    </SPAN>
+</DIV></BODY></HTML>
