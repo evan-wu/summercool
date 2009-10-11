@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+<wb-module deploy-name="bdconsulting-web-war">
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+<wb-resource deploy-path="/" source-path="/webapp"/>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-biz-core/bdconsulting-biz-core">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-biz-common/bdconsulting-biz-common">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-biz-dal/bdconsulting-biz-dal">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-admin/bdconsulting-web-admin">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-common/bdconsulting-web-common">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-common-toolkit/bdconsulting-common-toolkit">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-framework-summercool/bdconsulting-framework-summercool">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-blog/bdconsulting-web-blog">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-forum/bdconsulting-web-forum">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-group/bdconsulting-web-group">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-home/bdconsulting-web-home">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bdconsulting-web-news/bdconsulting-web-news">
+<dependency-type>uses</dependency-type>
+</dependent-module>
+<property name="context-root" value="bdconsulting-web-war"/>
+<property name="java-output-path"/>
+</wb-module>
+</project-modules>

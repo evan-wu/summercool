@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>bdconsulting-package</artifactId>
+		<groupId>com.bdconsulting</groupId>
+		<version>1.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bdconsulting</groupId>
+	<artifactId>bdconsulting-biz</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+	<name>bdconsulting-biz</name>
+	<modules>
+		<module>bdconsulting-biz-common</module>
+		<module>bdconsulting-biz-dal</module>
+		<module>bdconsulting-biz-core</module>
+  </modules>
+</project>
