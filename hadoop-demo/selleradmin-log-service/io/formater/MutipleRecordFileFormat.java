@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Progressable;
 
-import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.Writable;  
 
 /**
  * @author wuhao
