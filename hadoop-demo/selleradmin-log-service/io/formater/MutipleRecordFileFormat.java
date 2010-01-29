@@ -30,7 +30,7 @@ public class MutipleRecordFileFormat<K extends Writable, V extends Writable> ext
 		      theTextOutputFormat = new TextOutputFormat<K, V>();  
 		    }  
 //		    return theTextOutputFormat.getRecordWriter(job);  
-		return null;
+		return null;  
 	}
 
 	@Override
