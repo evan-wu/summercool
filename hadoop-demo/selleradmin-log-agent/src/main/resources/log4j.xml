@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- ===================================================================== -->
+	<!--  以下是appender的定义                                                 -->
+	<!-- ===================================================================== -->
+	<appender name="PROJECT"
+		class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="D:/temp/hadoopdemo.log" />
+		<param name="append" value="true"/>
+        <param name="encoding" value="GB2312"/>
+        <param name="threshold" value="debug"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%n%d %n%-5p %c{2} - %m%n"/>
+        </layout>
+	</appender>
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">   
+		<layout class="org.apache.log4j.PatternLayout">   
+			<param name="ConversionPattern"  value="[%d{dd HH:mm:ss,SSS\} %-5p] [%t] %c{2\} - %m%n" />   
+		</layout>
+	</appender>  
+	<!-- ===================================================================== -->
+	<!--  以下是logger的定义                                                   -->
+	<!-- ===================================================================== -->
+	<logger name="org.apache.hadoop" additivity="true">
+        <level value="INFO"/>
+		<!--  <appender-ref ref="InitMembers" />  -->
+    </logger>
+	<!-- ===================================================================== -->
+	<!--  Root logger的定义                                                    -->
+	<!-- ===================================================================== -->
+	<root>
+		<level value="debug" />
+		<appender-ref ref="PROJECT" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</log4j:configuration>
