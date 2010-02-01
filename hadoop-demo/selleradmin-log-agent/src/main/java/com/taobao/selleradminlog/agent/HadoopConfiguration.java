@@ -74,6 +74,7 @@ public class HadoopConfiguration {
 					
 					Configuration inner = new Configuration();
 					inner.set("hadoop.job.ugi", "hadoop,hadoop");
+					inner.set("mapred.system.dir", "/home/hadoop/hadoop-datastore/mapred/system");
 					
 //					仅测试用。用来修改需要上传的文件的replication值。
 //					inner.setInt("dfs.replication", 1);
