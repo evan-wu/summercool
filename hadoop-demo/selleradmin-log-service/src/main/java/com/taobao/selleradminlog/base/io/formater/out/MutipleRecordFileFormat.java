@@ -1,8 +1,6 @@
-package log.test;
+package com.taobao.selleradminlog.base.io.formater.out;
 
 import java.io.IOException;
-
-import log.test.util.MutipleOutputFormat;
 
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapreduce.RecordWriter;

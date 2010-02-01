@@ -1,17 +1,15 @@
-package log.test.util;
+package com.taobao.selleradminlog.base.io.formater.out;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.TreeMap;
 
-import log.test.constancts.HadoopConstants;
-
-import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.hdfs.DFSClient;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+import com.taobao.selleradminlog.HadoopConstants;
 
 /**
  * 用新API重写多文件输出格式

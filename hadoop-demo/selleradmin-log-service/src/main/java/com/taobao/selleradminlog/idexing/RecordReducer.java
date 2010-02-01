@@ -1,4 +1,4 @@
-package log.test;
+package com.taobao.selleradminlog.idexing;
 
 import java.io.IOException;
 
