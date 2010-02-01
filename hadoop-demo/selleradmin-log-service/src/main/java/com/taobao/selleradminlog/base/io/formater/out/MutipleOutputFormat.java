@@ -6,7 +6,9 @@ import java.util.TreeMap;
 
 import log.test.constancts.HadoopConstants;
 
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hdfs.DFSClient;
 import org.apache.hadoop.mapreduce.RecordWriter;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -37,20 +39,22 @@ public abstract class MutipleOutputFormat<K, V> extends FileOutputFormat<K, V>{
 
 	    return new RecordWriter<K, V>() {
 	    	
-	      // a cache storing the record writers for different output files.
+	        //缓存对于path的字符输出流
 			TreeMap<String, RecordWriter<K, V>> recordWriters = new TreeMap<String, RecordWriter<K, V>>();
 
+			/* 
+			 * 调用多次定制的写
+			 */
 			public void write(K key, V value) throws IOException,
 					InterruptedException {
 
 				// 默认按key命名
 				String keyBasedPath = generateFileNameForKeyValue(key, value);
 
-				// get the file name based on the input file name
-				String finalPath = getInputFileBasedOutputFileName(myJob,
+				// 定义输出文件名
+				String finalPath = getOutFileBasedOutputFileName(myJob,
 						keyBasedPath);
 
-				// get the actual key
 				K actualKey = generateActualKey(key, value);
 				V actualValue = generateActualValue(key, value);
                 //得到某一路径上文件的字符输出流
@@ -59,7 +63,10 @@ public abstract class MutipleOutputFormat<K, V> extends FileOutputFormat<K, V>{
 					//如果没有得到，重新取一个
 					rw = getBaseRecordWriter(myJob, finalPath);
 					this.recordWriters.put(finalPath, rw);
+					System.out.println(finalPath);
+					System.out.println(actualKey+":"+actualValue);
 				}
+				System.out.println("rw" + rw);
 				rw.write(actualKey, actualValue);
 			};
 
@@ -133,45 +140,52 @@ public abstract class MutipleOutputFormat<K, V> extends FileOutputFormat<K, V>{
 	  
 
 	  /**
-	   * Generate the outfile name based on a given name and the input file name. If
-	   * the map input file does not exists (i.e. this is not for a map only job),
-	   * the given name is returned unchanged. If the config value for
-	   * "num.of.trailing.legs.to.use" is not set, or set 0 or negative, the given
-	   * name is returned unchanged. Otherwise, return a file name consisting of the
-	   * N trailing legs of the input file name where N is the config value for
-	   * "num.of.trailing.legs.to.use".
+	   * 根据输出文件的路径，获取父路径，生成输出文件的最终名字，提供给不同的writer
+	   * 如果map的输入路径不存在，返回默认文件名
 	   * 
 	   * @param job
 	   *          the job config
-	   * @param name
+	   * @param keyBasedPath
 	   *          the output file name
-	   * @return the outfile name based on a given anme and the input file name.
+	   * @return the outfile name based on a given name and the input file name.
 	   */
-	  protected String getInputFileBasedOutputFileName(TaskAttemptContext job, String keyBasedPath) {
-	    String infilepath = job.getConfiguration().get(HadoopConstants.MAPRED_INPUT_DIR);
-	    if (infilepath == null) {
+	  protected String getOutFileBasedOutputFileName(TaskAttemptContext job, String keyBasedPath) {
+	    StringBuffer outfilepath = new StringBuffer(job.getConfiguration().get(HadoopConstants.MAPRED_OUTPUT_DIR));
+	    if (outfilepath == null) {
 	      // if the map input file does not exists, then return the given name
 	      return keyBasedPath;
 	    }
-	    int numOfTrailingLegsToUse = job.getConfiguration().getInt("mapred.outputformat.numOfTrailingLegs", 0);
-	    if (numOfTrailingLegsToUse <= 0) {
-	      return keyBasedPath;
-	    }
+	    //相当于selleradmin/$timestamp$
 	    
-	    //TODO: 生成到不同路径
+	    String hashdir = new Long(keyBasedPath.hashCode()
+				% (HadoopConstants.DEFAULT_PARTITION)).toString();
 	    
 	    
-	    Path infile = new Path(infilepath);
-	    Path parent = infile.getParent();
-	    String midName = infile.getName();
-	    Path outPath = new Path(midName);
-	    for (int i = 1; i < numOfTrailingLegsToUse; i++) {
-	      if (parent == null) break;
-	      midName = parent.getName();
-	      if (midName.length() == 0) break;
-	      parent = parent.getParent();
-	      outPath = new Path(midName, outPath);
-	    }
+	    outfilepath = outfilepath.append("/")
+	                             .append(hashdir);
+	    
+	   
+	    
+	    System.out.println("outfilepath:"+outfilepath);
+	    Path outfile = null;                     
+	   
+//	    try {
+//			DFSClient dfsClient = new DFSClient(job.getConfiguration());
+//			FileStatus fst = dfsClient.getFileInfo(outfilepath.toString());
+//			 if(fst == null || !fst.isDir()){
+//				 dfsClient.mkdirs(outfilepath.toString());	 
+//			 }
+//			 else{
+				 outfile = new Path(outfilepath.append("/").append(keyBasedPath)
+						.toString());
+				
+//			 }
+//		} catch (IOException e) {
+//			System.out.println(e);
+//		}  
+		//该路径最后的名字
+		String midName = outfile.getName();
+		Path outPath = new Path(midName);
 	    return outPath.toString();
 	  }
 

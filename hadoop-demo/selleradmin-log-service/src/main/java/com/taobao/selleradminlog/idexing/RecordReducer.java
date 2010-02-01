@@ -15,11 +15,11 @@ public class RecordReducer extends Reducer<Text, Text, Text, Text>{
 
 		StringBuffer tmp = new StringBuffer();
 		for(Text val : values){
-			tmp.append(val.toString())
-			   .append("\n");	
+			tmp.append(val.toString());
 		}
 		
 		result.set(tmp.toString());
+		System.out.println("recordReducer:"+ "key="+key +": value="+ result);
 	    context.write(key, result);	
 		
 	}
