@@ -117,9 +117,8 @@ public class DummyBaseLogGenerator {
 	
 	
 	public static void main(String[] args) throws IOException {
-//		test
-//		long mainId = 1026L;
-		for (long mainId = 1026L; mainId<1026L + 1; mainId++ ) {
+//		为一定范围内的mainId，生成一定时间范围，一定文件大小的base文件，并上传。
+		for (long mainId = 1026L; mainId<=1026L ; mainId++ ) {
 			double sizeInMb = 0.01;
 			for (int date = 20100202;date<=20100202; date++) {
 				String dateStr= String.valueOf(date);
