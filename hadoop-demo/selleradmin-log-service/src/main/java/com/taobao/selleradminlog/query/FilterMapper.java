@@ -53,7 +53,7 @@ public class FilterMapper extends Mapper<Object, Text, Text, IntWritable> {
 	}
 
 	private boolean match(Text value, QueryCondition condition) {
-		log.error("match, condition=" + DistributedQueryCondition.conditionToString(condition));
+//		log.error("match, condition=" + DistributedQueryCondition.conditionToString(condition));
 		
 //		debug
 		if (true) return true;

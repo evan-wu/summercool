@@ -18,12 +18,12 @@ import org.apache.hadoop.mapreduce.Mapper;
  * 
  *
  */
-public class RecordMapper extends Mapper<Text, Text, LongWritable, Text>{
+public class RecordMapper extends Mapper<Object, Text, Text, Text>{
 	
 	private Text id = new Text();
 
 	@Override
-	protected void map(Text key, Text value,Context context)
+	protected void map(Object key, Text value,Context context)
 			throws IOException, InterruptedException {
 		//one row one key, default partition
 		StringTokenizer itr = new StringTokenizer(value.toString());

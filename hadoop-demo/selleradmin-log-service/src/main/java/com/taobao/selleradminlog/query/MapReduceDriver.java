@@ -43,7 +43,6 @@ public class MapReduceDriver {
 			conf.set("hadoop.job.ugi", "hadoop,hadoop");
 			conf.set("mapred.system.dir", "/home/hadoop/hadoop-datastore/mapred/system");
 			conf.setInt("dfs.datanode.socket.write.timeout", 0);
-			conf.set("mapred.child.java.opts", "-Xmx200m -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n");
 			
 			//		设置查询条件。
 			DistributedQueryCondition.setQueryCondition(condition, conf);

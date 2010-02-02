@@ -40,6 +40,7 @@ public class KeyIdexing {
 		 job.setOutputKeyClass(Text.class);
 		 job.setOutputValueClass(Text.class);
 		 job.setReducerClass(RecordReducer.class);
+		 job.setMapperClass(RecordMapper.class);
 
 		 //使用自定义输出格式
 //		 job.setOutputFormatClass(MutipleRecordFileFormat.class);

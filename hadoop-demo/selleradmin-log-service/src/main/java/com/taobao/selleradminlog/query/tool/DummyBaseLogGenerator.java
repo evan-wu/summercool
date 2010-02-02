@@ -120,8 +120,8 @@ public class DummyBaseLogGenerator {
 //		test
 //		long mainId = 1026L;
 		for (long mainId = 1026L; mainId<1026L + 1; mainId++ ) {
-			double sizeInMb = 0.1;
-			for (int date = 20100120;date<20100129; date++) {
+			double sizeInMb = 0.01;
+			for (int date = 20100202;date<=20100202; date++) {
 				String dateStr= String.valueOf(date);
 				createAndUploadBaseLog(mainId, dateStr, sizeInMb);
 			}
@@ -139,7 +139,7 @@ public class DummyBaseLogGenerator {
 		}
 		String name = mainId + "-" + dateStr + ".log";
 		String file = "d:\\temp\\" + name;
-		log.info("Create file " + file);
+//		log.info("Create file " + file);
 		try {
 			int lineCount = (int) Math.round( sizeInMb * 5000 );
 			createLogFile(file, lineCount, new long[]{mainId}, 10, date);
