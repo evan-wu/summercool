@@ -4,6 +4,7 @@
 		<artifactId>bdconsulting-package</artifactId>
 		<groupId>com.bdconsulting</groupId>
 		<version>1.0</version>
+		<relativePath>../base/pom.xml</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bdconsulting</groupId>
