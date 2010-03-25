@@ -11,4 +11,21 @@
   <packaging>jar</packaging>
   <version>1.0</version>
   <name>bdconsulting-common-toolkit</name>
+  	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.16</version>
+		</dependency>
+		<dependency>
+			<groupId>cryptix-jce-provider</groupId>
+			<artifactId>cryptix-jce-provider</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+	</dependencies>
 </project>

@@ -50,5 +50,11 @@
 			<artifactId>bdconsulting-web-news</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>jetty</groupId>
+			<artifactId>jetty</artifactId>
+			<version>6.1.22</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 </project>
