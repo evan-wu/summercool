@@ -14,9 +14,7 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.BeanFactoryUtils;
@@ -272,16 +270,16 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 	@SuppressWarnings("unchecked")
 	private void initRequestAndResponseWrapper(ApplicationContext applicationContext) {
 		try {
-			HttpServletRequestWrapper matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
-					HttpServletRequestWrapper.class, true, false);
+			HttpServletRequest matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
+					HttpServletRequest.class, true, false);
 			this.requestClass = (Class<HttpServletRequest>) matchingBean.getClass();
 		} catch (NoSuchBeanDefinitionException ex) {
 			// Ignore, we do not need a RequestClass.
 			logger.debug("we do not need a RequestClass", ex);
 		}
 		try {
-			HttpServletResponseWrapper matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
-					HttpServletResponseWrapper.class, true, false);
+			HttpServletResponse matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
+					HttpServletResponse.class, true, false);
 			this.responseClass = (Class<HttpServletResponse>) matchingBean.getClass();
 		} catch (NoSuchBeanDefinitionException ex) {
 			// Ignore, we do not need a ResponseClass.
@@ -316,7 +314,8 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 	 */
 	private void registerFreeMarkerFunction(ApplicationContext applicationContext) {
 		try {
-			FreeMarkerViewResolver matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext, FreeMarkerViewResolver.class, true, false);
+			FreeMarkerViewResolver matchingBean = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
+					FreeMarkerViewResolver.class, true, false);
 			Map<String, Object> attributes = matchingBean.getAttributesMap();
 			Map<String, Object> functions = new HashMap<String, Object>();
 			// 注册param()函数
@@ -333,15 +332,19 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 			// 注册theme()函数
 			functions.put("theme", BeanUtils.instantiate(FreeMarkerThemeFunction.class));
 			// 注册widgetForString()函数
-			FreeMarkerConfig freeMarkerConfig = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext, FreeMarkerConfig.class, true, false);
-			FreeMarkerWidgetForStringFunction freemarkerWidgetForStringFunction = BeanUtils.instantiate(FreeMarkerWidgetForStringFunction.class);
+			FreeMarkerConfig freeMarkerConfig = BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext,
+					FreeMarkerConfig.class, true, false);
+			FreeMarkerWidgetForStringFunction freemarkerWidgetForStringFunction = BeanUtils
+					.instantiate(FreeMarkerWidgetForStringFunction.class);
 			freemarkerWidgetForStringFunction.setConfiguration(freeMarkerConfig.getConfiguration());
 			freemarkerWidgetForStringFunction.setFunctions(functions);
 			functions.put("widgetForString", freemarkerWidgetForStringFunction);
 			// 注册widget()函数
 			if (matchingBean instanceof com.bdconsulting.summercool.web.servlet.view.freemarker.FreeMarkerViewResolver) {
-				FreeMarkerWidgetFunction freeMarkerWidgetFunction = BeanUtils.instantiate(FreeMarkerWidgetFunction.class);
-				freeMarkerWidgetFunction.setFreemarkerViewResolver((com.bdconsulting.summercool.web.servlet.view.freemarker.FreeMarkerViewResolver) matchingBean);
+				FreeMarkerWidgetFunction freeMarkerWidgetFunction = BeanUtils
+						.instantiate(FreeMarkerWidgetFunction.class);
+				freeMarkerWidgetFunction
+						.setFreemarkerViewResolver((com.bdconsulting.summercool.web.servlet.view.freemarker.FreeMarkerViewResolver) matchingBean);
 				Map<String, FreeMarkerWidget> widgets = freeMarkerWidgetFunction.getWidgetsMap();
 				if (this.webModuleConfigurers != null) {
 					for (WebModuleConfigurer webModuleConfigurer : webModuleConfigurers) {
@@ -368,7 +371,8 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 	private void buildUrlBuilderModule(HttpServletRequest request) {
 		UrlBuilderModule urlBuilderModule = null;
 		if (this.urlBuilderModuleConfigurer != null) {
-			urlBuilderModule = new DefaultUrlBuilderModule(request, this.urlBuilderModuleConfigurer.getUrlBuilderBeanMap());
+			urlBuilderModule = new DefaultUrlBuilderModule(request, this.urlBuilderModuleConfigurer
+					.getUrlBuilderBeanMap());
 		}
 		request.setAttribute(UrlBuilderModule.URL_BUILDER, urlBuilderModule);
 	}
@@ -383,7 +387,8 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 	private void buildCookieModule(HttpServletRequest request, HttpServletResponse response) {
 		CookieModule cookieModule = null;
 		if (this.cookieModuleConfigurer != null) {
-			cookieModule = new DefaultCookieModule(this.cookieModuleConfigurer.getClientName2CfgMap(), this.cookieModuleConfigurer.getName2CfgMap(), request, response);
+			cookieModule = new DefaultCookieModule(this.cookieModuleConfigurer.getClientName2CfgMap(),
+					this.cookieModuleConfigurer.getName2CfgMap(), request, response);
 		}
 		request.setAttribute(CookieModule.COOKIE, cookieModule);
 	}
@@ -416,7 +421,8 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 		}
 		//
 		if (bestPathMatch != null && bestPathMatchPackage != null) {
-			viewName = lookupPath.replaceFirst(bestPathMatch, bestPathMatchPackage + ClassPathControllerAndWidgetScanner.VIEWS_PACKAGE + ClassPathControllerAndWidgetScanner.SLASH);
+			viewName = lookupPath.replaceFirst(bestPathMatch, bestPathMatchPackage
+					+ ClassPathControllerAndWidgetScanner.VIEWS_PACKAGE + ClassPathControllerAndWidgetScanner.SLASH);
 			int position = viewName.lastIndexOf(".");
 			viewName = (position != -1) ? viewName.substring(0, position) : viewName;
 		}
@@ -462,7 +468,8 @@ public class DispatcherServlet extends org.springframework.web.servlet.Dispatche
 				processedRequest = checkMultipart(request);
 				// Determine handler for the current request.
 				mappedHandler = getHandler(processedRequest, false);
-				mappedHandler = mappedHandler == null ? this.handlerMapping.getHandler(processedRequest) : mappedHandler;
+				mappedHandler = mappedHandler == null ? this.handlerMapping.getHandler(processedRequest)
+						: mappedHandler;
 				if (mappedHandler == null || mappedHandler.getHandler() == null) {
 					viewName = requestToViewName(request);
 					mv = new ModelAndView();
