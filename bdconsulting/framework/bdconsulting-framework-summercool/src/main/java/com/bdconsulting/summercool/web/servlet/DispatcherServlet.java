@@ -14,7 +14,9 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.BeanFactoryUtils;
@@ -49,8 +51,6 @@ import com.bdconsulting.summercool.web.module.cookie.CookieModule;
 import com.bdconsulting.summercool.web.module.cookie.DefaultCookieModule;
 import com.bdconsulting.summercool.web.module.url.DefaultUrlBuilderModule;
 import com.bdconsulting.summercool.web.module.url.UrlBuilderModule;
-import com.bdconsulting.summercool.web.servlet.http.HttpServletRequestWrapper;
-import com.bdconsulting.summercool.web.servlet.http.HttpServletResponseWrapper;
 import com.bdconsulting.summercool.web.servlet.pipeline.AroundProcessPipeline;
 import com.bdconsulting.summercool.web.servlet.pipeline.ExceptionPipeline;
 import com.bdconsulting.summercool.web.servlet.pipeline.PostProcessPipeline;
