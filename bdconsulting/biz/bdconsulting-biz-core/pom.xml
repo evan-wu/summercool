@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.bdconsulting</groupId>
-			<artifactId>bdconsulting-biz-common</artifactId>
+			<artifactId>bdconsulting-biz-client</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
