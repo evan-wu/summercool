@@ -13,8 +13,15 @@
 	<version>1.0</version>
 	<name>bdconsulting-biz</name>
 	<modules>
-		<module>bdconsulting-biz-common</module>
+		<module>bdconsulting-biz-client</module>
 		<module>bdconsulting-biz-dal</module>
 		<module>bdconsulting-biz-core</module>
   </modules>
+  <dependencies>
+		<dependency>
+			<groupId>com.bdconsulting</groupId>
+			<artifactId>bdconsulting-common-toolkit</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 </project>
