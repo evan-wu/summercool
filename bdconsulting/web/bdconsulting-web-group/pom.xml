@@ -7,10 +7,10 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bdconsulting</groupId>
-	<artifactId>bdconsulting-web-group</artifactId>
+	<artifactId>bdconsulting-web-mall</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
-	<name>bdconsulting-web-group</name>
+	<name>bdconsulting-web-mall</name>
 	<dependencies>
 		<dependency>
 			<groupId>com.bdconsulting</groupId>

@@ -10,5 +10,5 @@
 	<artifactId>bdconsulting-framework-summercool</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
-	<name>bdconsulting-runtime-summercool</name>
+	<name>bdconsulting-framework-summercool</name>
 </project>

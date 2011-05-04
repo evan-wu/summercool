@@ -37,7 +37,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.bdconsulting</groupId>
-			<artifactId>bdconsulting-web-group</artifactId>
+			<artifactId>bdconsulting-web-mall</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
@@ -47,7 +47,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.bdconsulting</groupId>
-			<artifactId>bdconsulting-web-news</artifactId>
+			<artifactId>bdconsulting-web-cms</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
