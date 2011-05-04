@@ -7,8 +7,8 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bdconsulting</groupId>
-	<artifactId>bdconsulting-biz-common</artifactId>
+	<artifactId>bdconsulting-biz-client</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
-	<name>bdconsulting-biz-common</name>
+	<name>bdconsulting-biz-client</name>
 </project>
