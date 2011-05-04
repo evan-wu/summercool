@@ -11,11 +11,4 @@
 	<packaging>jar</packaging>
 	<version>1.0</version>
 	<name>bdconsulting-biz-dal</name>
-	<dependencies>
-		<dependency>
-			<groupId>com.bdconsulting</groupId>
-			<artifactId>bdconsulting-biz-common</artifactId>
-			<version>1.0</version>
-		</dependency>
-	</dependencies>
 </project>
