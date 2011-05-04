@@ -13,13 +13,13 @@
 	<version>1.0</version>
 	<name>bdconsulting-web</name>
 	<modules>
-		<module>bdconsulting-mail-template</module>
+		<module>bdconsulting-content-template</module>
 		<module>bdconsulting-web-common</module>
 		<module>bdconsulting-web-home</module>
-		<module>bdconsulting-web-news</module>
+		<module>bdconsulting-web-cms</module>
 		<module>bdconsulting-web-blog</module>
 		<module>bdconsulting-web-group</module>
-		<module>bdconsulting-web-forum</module>
+		<module>bdconsulting-web-mall</module>
 		<module>bdconsulting-web-admin</module>
     	<module>bdconsulting-web-war</module>
   </modules>
