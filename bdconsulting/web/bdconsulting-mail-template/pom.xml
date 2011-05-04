@@ -7,8 +7,8 @@
 	</parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.alibaba</groupId>
-  <artifactId>bdconsulting-mail-template</artifactId>
+  <artifactId>bdconsulting-content-template</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>bdconsulting-mail-template</name>
+  <name>bdconsulting-content-template</name>
 </project>
