@@ -1,5 +1,6 @@
 package com.bdconsulting.toolkit.lang;
 
+import java.io.UnsupportedEncodingException;
 
 /**
  * 
@@ -51,5 +52,35 @@ public class StringUtil {
 		return new String(c);
 	}
 
+	/**
+	 * 对字符串进行重新分组，每个字符串数据最大元素不不能超过bytesSize
+	 * 
+	 * @param input
+	 * @param bytesSize
+	 * @return
+	 */
+	public static String[] toArray(String input, int bytesSize) {
+		return toArray(input, bytesSize, "UTF-8");
+	}
+
+	/**
+	 * 对字符串进行重新分组，每个字符串数据最大元素不不能超过bytesSize
+	 * 
+	 * @param input
+	 * @param bytesSize
+	 * @param charsetName
+	 * @return
+	 */
+	public static String[] toArray(String input, int bytesSize, String charsetName) {
+		//if(StringUtil)
+		
+		return null;
+	}
+
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		String str = "123abc试试看?";
+		byte[] b = str.getBytes();
+		System.out.println(str + "共包含" + b.length + "个字节");
+	}
 
 }
