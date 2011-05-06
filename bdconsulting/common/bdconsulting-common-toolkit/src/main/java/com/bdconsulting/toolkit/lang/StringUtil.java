@@ -1,6 +1,13 @@
 package com.bdconsulting.toolkit.lang;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 
 /**
  * 
@@ -15,12 +22,52 @@ import java.io.UnsupportedEncodingException;
 public class StringUtil {
 
 	/**
+	 * 默认编码UTF-8
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String decode(String str) {
+		if (str == null) {
+			return StringUtils.EMPTY;
+		}
+
+		try {
+			return URLDecoder.decode(str, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 默认编码UTF-8
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static String encode(String str) {
+		if (str == null) {
+			return StringUtils.EMPTY;
+		}
+
+		try {
+			return URLEncoder.encode(str, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
 	 * 半角转全角
 	 * 
 	 * @param input String.
 	 * @return 全角字符串.
 	 */
 	public static String ToSBC(String input) {
+		if (input == null) {
+			return input;
+		}
+
 		char c[] = input.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			if (c[i] == ' ') {
@@ -40,6 +87,10 @@ public class StringUtil {
 	 * @return 半角字符串
 	 */
 	public static String ToDBC(String input) {
+		if (input == null) {
+			return input;
+		}
+
 		char c[] = input.toCharArray();
 		for (int i = 0; i < c.length; i++) {
 			if (c[i] == '\u3000') {
@@ -72,15 +123,65 @@ public class StringUtil {
 	 * @return
 	 */
 	public static String[] toArray(String input, int bytesSize, String charsetName) {
-		//if(StringUtil)
-		
-		return null;
-	}
+		Charset charset = Charset.forName(charsetName);
+		int maxBytesPerChar = new Float(charset.newEncoder().maxBytesPerChar()).intValue();
 
-	public static void main(String[] args) throws UnsupportedEncodingException {
-		String str = "123abc试试看?";
-		byte[] b = str.getBytes();
-		System.out.println(str + "共包含" + b.length + "个字节");
+		if (input == null) {
+			return new String[] {};
+		}
+		if (bytesSize < maxBytesPerChar) {
+			throw new RuntimeException("bytesSize不能小于" + maxBytesPerChar + "!");
+		}
+
+		byte[] inputArray;
+		try {
+			inputArray = input.getBytes(charsetName);
+			if (inputArray.length <= bytesSize) {
+				return new String[] { input };
+			}
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
+
+		List<String> stringList = new ArrayList<String>();
+		int currentBytesSize = 0;
+		StringBuilder sb = new StringBuilder();
+		char[] charArray = input.toCharArray();
+
+		for (int i = 0; i < charArray.length; i++) {
+			if (!((charArray[i] & 0xFF80) != 0)) { // ascii码判断
+				currentBytesSize = currentBytesSize + 1;
+				sb.append(charArray[i]);
+				if ((currentBytesSize + maxBytesPerChar) >= bytesSize) {
+					stringList.add(sb.toString());
+					sb = new StringBuilder();
+					currentBytesSize = 0;
+				} else if (i == (charArray.length - 1)) {
+					stringList.add(sb.toString());
+					sb = new StringBuilder();
+					currentBytesSize = 0;
+				}
+			} else {
+				currentBytesSize = currentBytesSize + maxBytesPerChar;
+				sb.append(charArray[i]);
+				if ((currentBytesSize + maxBytesPerChar) >= bytesSize) {
+					stringList.add(sb.toString());
+					sb = new StringBuilder();
+					currentBytesSize = 0;
+				} else if (i == (charArray.length - 1)) {
+					stringList.add(sb.toString());
+					sb = new StringBuilder();
+					currentBytesSize = 0;
+				}
+			}
+		}
+
+		String[] stringArray = new String[stringList.size()];
+		for (int i = 0; i < stringArray.length; i++) {
+			stringArray[i] = stringList.get(i);
+		}
+
+		return stringArray;
 	}
 
 }
