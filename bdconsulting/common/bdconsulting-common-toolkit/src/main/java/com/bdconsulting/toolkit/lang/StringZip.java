@@ -6,8 +6,6 @@ package com.bdconsulting.toolkit.lang;
 import java.io.IOException;
 import java.util.zip.DataFormatException;
 
-import org.springframework.util.StringUtils;
-
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -31,7 +29,7 @@ public class StringZip {
 	 * @throws IOException 
 	 */
 	public static String zipString(String str) throws Exception {
-		if (!StringUtils.hasText(str)) {
+		if (str == null) {
 			return str;
 		}
 		byte[] bytes = CompressionTools.compressString(str);
@@ -47,11 +45,11 @@ public class StringZip {
 	 * @throws DataFormatException 
 	 */
 	public static String unzipString(String str) throws IOException, DataFormatException {
-		if (!StringUtils.hasText(str)) {
+		if (str == null) {
 			return str;
 		}
 		byte[] bytes = new BASE64Decoder().decodeBuffer(str);
 		return CompressionTools.decompressString(bytes);
 	}
-	
+
 }
