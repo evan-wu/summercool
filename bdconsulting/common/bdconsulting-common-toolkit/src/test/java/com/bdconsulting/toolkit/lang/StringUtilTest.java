@@ -24,7 +24,7 @@ public class StringUtilTest {
 
 	private static void test2() {
 		String str = "2&&**(#@3abc　试看";
-		for (String arrayStr : StringUtil.toArray(str, 10)) {
+		for (String arrayStr : StringUtil.toArray(str, 20)) {
 			System.out.println(arrayStr);
 		}
 
