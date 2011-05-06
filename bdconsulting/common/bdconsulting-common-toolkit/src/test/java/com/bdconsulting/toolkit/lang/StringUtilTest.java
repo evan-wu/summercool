@@ -14,17 +14,28 @@ package com.bdconsulting.toolkit.lang;
  */
 public class StringUtilTest {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
+	private static void test1() {
 		String str1 = "Ｈｅｌｌｏ　Ｗｏｒｌｄ！";
 		System.out.println("全角转半角: " + str1 + " -- > " + StringUtil.ToDBC(str1));
 
 		String str2 = "Hello World!";
 		System.out.println("全角转半角: " + str2 + " -- > " + StringUtil.ToSBC(str2));
+	}
+
+	private static void test2() {
+		String str = "2&&**(#@3abc　试看";
+		for (String arrayStr : StringUtil.toArray(str, 10)) {
+			System.out.println(arrayStr);
+		}
 
 	}
 
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		test1();
+		System.out.println("----------------------------------");
+		test2();
+	}
 }
