@@ -4,6 +4,7 @@
 package com.bdconsulting.toolkit.xml;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.Map;
@@ -14,6 +15,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -28,6 +30,8 @@ import org.apache.commons.lang.StringUtils;
  * 
  */
 public class Jaxb2Marshaller {
+
+	private static final String XML_HEADER = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 
 	private static final Map<Class<?>, JAXBContext> JAXB_CONTEXT_CACHE = new ConcurrentHashMap<Class<?>, JAXBContext>();
 
@@ -48,12 +52,13 @@ public class Jaxb2Marshaller {
 		try {
 			JAXBContext jaxbContext = getJAXBContext(clazz);
 			Marshaller marshaller = jaxbContext.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
 			marshaller.marshal(object, out);
 		} catch (JAXBException e) {
 			throw new RuntimeException(e);
 		}
 
-		return out.toString();
+		return XML_HEADER + out.toString();
 	}
 
 	/**
@@ -73,10 +78,9 @@ public class Jaxb2Marshaller {
 		}
 
 		try {
-			JAXBContext jaxbContext = getJAXBContext(clazz);
-			Marshaller marshaller = jaxbContext.createMarshaller();
-			marshaller.marshal(object, xmlFile);
-		} catch (JAXBException e) {
+			String xml = marshal(object, clazz);
+			FileUtils.writeStringToFile(xmlFile, xml, "UTF-8");
+		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 
@@ -139,10 +143,9 @@ public class Jaxb2Marshaller {
 		Object object = null;
 
 		try {
-			JAXBContext jaxbContext = getJAXBContext(clazz);
-			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			object = unmarshaller.unmarshal(xmlFile);
-		} catch (JAXBException e) {
+			String xml = FileUtils.readFileToString(xmlFile, "UTF-8");
+			object = unmarshal(xml, clazz);
+		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 
