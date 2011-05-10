@@ -31,6 +31,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 
+import com.bdconsulting.toolkit.lang.IOUtil;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
@@ -62,7 +63,8 @@ public class ImageScaler {
 		FileInputStream inputStream = null;
 		try {
 			inputStream = new FileInputStream(infile);
-			scaleImage(inputStream, outfile, width, height, keepAspect, quality);
+			byte[] byteArray = IOUtil.transformInputstream(inputStream);
+			scaleImage(byteArray, outfile, width, height, keepAspect, quality);
 		} finally {
 			try {
 				if (inputStream != null) {
@@ -83,12 +85,11 @@ public class ImageScaler {
 	 * @param quality
 	 * @throws Exception
 	 */
-	public static void scaleImage(InputStream infile, File outfile, int width, int height, boolean keepAspect,
+	public static void scaleImage(byte[] byteArray, File outfile, int width, int height, boolean keepAspect,
 			float quality) throws Exception {
 		ByteArrayOutputStream outputStream = null;
-
 		try {
-			outputStream = scaleImage2OutputStream(infile, width, height, keepAspect, quality);
+			outputStream = scaleImage2OutputStream(byteArray, width, height, keepAspect, quality);
 			FileUtils.writeByteArrayToFile(outfile, outputStream.toByteArray());
 		} finally {
 			try {
@@ -110,35 +111,9 @@ public class ImageScaler {
 	 * @return
 	 * @throws Exception
 	 */
-	public static ByteArrayInputStream scaleImage2InputStream(InputStream infile, int width, int height,
+	public static ByteArrayOutputStream scaleImage2OutputStream(byte[] byteArray, int width, int height,
 			boolean keepAspect, float quality) throws Exception {
-		ByteArrayOutputStream outputStream = null;
-		try {
-			outputStream = scaleImage2OutputStream(infile, width, height, keepAspect, quality);
-			return new ByteArrayInputStream(outputStream.toByteArray());
-		} finally {
-			try {
-				if (outputStream != null) {
-					outputStream.close();
-				}
-			} catch (Exception e) {
-			}
-		}
-	}
-
-	/**
-	 * 
-	 * @param infile
-	 * @param width
-	 * @param height
-	 * @param keepAspect
-	 * @param quality
-	 * @return
-	 * @throws Exception
-	 */
-	public static ByteArrayOutputStream scaleImage2OutputStream(InputStream infile, int width, int height,
-			boolean keepAspect, float quality) throws Exception {
-
+		InputStream infile = new ByteArrayInputStream(byteArray);
 		BufferedImage original = ImageIO.read(infile);
 		if (original == null) {
 			throw new Exception("Unsupported file format!");
