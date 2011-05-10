@@ -85,8 +85,19 @@ public class ImageScaler {
 	 */
 	public static void scaleImage(InputStream infile, File outfile, int width, int height, boolean keepAspect,
 			float quality) throws Exception {
-		ByteArrayOutputStream outputStream = scaleImage2OutputStream(infile, width, height, keepAspect, quality);
-		FileUtils.writeByteArrayToFile(outfile, outputStream.toByteArray());
+		ByteArrayOutputStream outputStream = null;
+
+		try {
+			outputStream = scaleImage2OutputStream(infile, width, height, keepAspect, quality);
+			FileUtils.writeByteArrayToFile(outfile, outputStream.toByteArray());
+		} finally {
+			try {
+				if (outputStream != null) {
+					outputStream.close();
+				}
+			} catch (Exception e) {
+			}
+		}
 	}
 
 	/**
