@@ -30,7 +30,8 @@ public class ImageUtilTest {
 
 	public static void test2() {
 		try {
-			ImageScaler.scaleImage(new File("D:/个人资料/照片/me.jpg"), new File("d:/new_1.jpg"), 500, 500, true, 0.9f);
+			File file = new File("d:/demo/xt.jpg");
+			ImageScaler.scaleImage(new File("D:/个人资料/照片/me.jpg"), file, 500, 500, true, 0.9f);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
