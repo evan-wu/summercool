@@ -50,7 +50,7 @@ under the License.
    | Default: ~/.m2/repository
   <localRepository>/path/to/local/repo</localRepository>
   -->
-  <localRepository>E:\works\work\bdconsulting\source\maven\maven2\repository</localRepository>
+  <localRepository>D:/dev/summercool/maven/maven2/repository</localRepository>
   <!-- interactiveMode
    | This will determine whether maven prompts you when it needs input. If set to false,
    | maven will use a sensible default value, perhaps based on some other setting, for
