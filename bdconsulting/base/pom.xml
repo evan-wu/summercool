@@ -254,8 +254,9 @@
 			<type>jar</type>
 		</dependency>
 
-		<!-- imgscalr -->
-		
+		<!-- jetty -->
+
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
