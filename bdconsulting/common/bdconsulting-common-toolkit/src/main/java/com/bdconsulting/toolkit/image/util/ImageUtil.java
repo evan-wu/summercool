@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bdconsulting.toolkit.image;
+package com.bdconsulting.toolkit.image.util;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -17,10 +17,12 @@ import javax.imageio.stream.MemoryCacheImageInputStream;
 
 import org.apache.commons.io.FileUtils;
 
+import com.bdconsulting.toolkit.image.ImageScaler;
+
 /**
  * Datetime   ： 2011-5-6 上午10:36:57<br>
  * Title      :  ImageUtil.java<br>
- * Description:   <br>
+ * Description:  只支持jpg和png并生成jpg文件，优点是速度快 <br>
  * Copyright  :  Copyright (c) 2011<br>
  * Company    :  大连尚嘉<br>
  * @author 简道
