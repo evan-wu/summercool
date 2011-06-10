@@ -31,7 +31,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.io.FileUtils;
 
-import com.bdconsulting.toolkit.lang.IOUtil;
+import com.bdconsulting.toolkit.io.IOUtil;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
