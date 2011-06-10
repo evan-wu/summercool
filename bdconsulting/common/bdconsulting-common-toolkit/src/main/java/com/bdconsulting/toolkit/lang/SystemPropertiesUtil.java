@@ -43,8 +43,8 @@ public class SystemPropertiesUtil {
 			String value = (String) entry.getValue();
 
 			if (oldValue != null && !StringUtils.pathEquals(oldValue, value)) {
-				throw new IllegalStateException("the system property already set to different value: '" 
-						+ key + "'" + " = [" + oldValue + "] instead of [" + value + "]");
+				throw new IllegalStateException("the system property already set to different value: '" + key + "'"
+						+ " = [" + oldValue + "] instead of [" + value + "]");
 			}
 
 			System.setProperty(key, value);

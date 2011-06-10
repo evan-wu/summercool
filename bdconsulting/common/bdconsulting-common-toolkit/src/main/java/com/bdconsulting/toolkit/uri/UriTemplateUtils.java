@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.uri;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.util.StringUtils;
+
 
 /**
  * Datetime   ： 2011-5-11 下午05:22:36<br>

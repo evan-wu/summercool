@@ -3,6 +3,8 @@
  */
 package com.bdconsulting.toolkit.lang;
 
+import com.bdconsulting.toolkit.zip.StringZip;
+
 /**
  * Datetime   ： 2011-5-5 下午09:50:08<br>
  * Title      :  StringZipTest.java<br>

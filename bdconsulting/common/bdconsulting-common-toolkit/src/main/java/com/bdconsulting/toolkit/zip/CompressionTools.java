@@ -1,4 +1,4 @@
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.zip;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE
@@ -17,6 +17,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
+
 
 /** Simple utility class providing static methods to
  *  compress and decompress binary data for stored fields.

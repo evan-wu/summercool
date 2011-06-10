@@ -1,9 +1,7 @@
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.file;
 
 import java.io.File;
 import java.io.IOException;
-
-import org.apache.commons.io.FilenameUtils;
 
 /**
  * 文件工具类

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.md5;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

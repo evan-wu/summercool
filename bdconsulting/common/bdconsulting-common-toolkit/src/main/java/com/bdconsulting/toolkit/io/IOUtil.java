@@ -1,4 +1,4 @@
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

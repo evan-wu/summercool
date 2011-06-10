@@ -1,10 +1,11 @@
 /**
  * 
  */
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.zip;
 
 import java.io.IOException;
 import java.util.zip.DataFormatException;
+
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

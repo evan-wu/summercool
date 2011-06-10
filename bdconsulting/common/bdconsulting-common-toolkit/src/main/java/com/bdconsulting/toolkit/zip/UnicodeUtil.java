@@ -1,4 +1,4 @@
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.zip;
 
 
 /**

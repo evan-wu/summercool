@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-import com.bdconsulting.toolkit.lang.IOUtil;
+import com.bdconsulting.toolkit.image.util.ImageUtil;
+import com.bdconsulting.toolkit.io.IOUtil;
 
 /**
  * 

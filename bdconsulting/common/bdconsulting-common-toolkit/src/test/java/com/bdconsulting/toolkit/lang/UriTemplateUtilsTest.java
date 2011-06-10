@@ -7,6 +7,8 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.bdconsulting.toolkit.uri.UriTemplateUtils;
+
 /**
  * Datetime   ： 2011-5-11 下午05:24:34<br>
  * Title      :  UriTemplateUtilsTest.java<br>

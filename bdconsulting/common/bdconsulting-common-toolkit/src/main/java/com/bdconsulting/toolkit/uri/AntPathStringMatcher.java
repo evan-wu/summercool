@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bdconsulting.toolkit.lang;
+package com.bdconsulting.toolkit.uri;
 
 /**
  * Datetime ： 2011-5-11 下午05:21:08<br>
