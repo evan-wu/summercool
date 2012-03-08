@@ -38,9 +38,10 @@ public class JettyStarter {
 		connector.setLowResourcesConnections(32000);
 		connector.setLowResourcesMaxIdleTime(60000 * 10);
 		server.setConnectors(new Connector[] { connector });
-		
+
 		//
 		WebAppContext webAppContext = new WebAppContext();
+		webAppContext.setClassLoader(Thread.currentThread().getContextClassLoader());
 		webAppContext.setResourceBase("./webapp");
 		webAppContext.setContextPath("/");
 		//
