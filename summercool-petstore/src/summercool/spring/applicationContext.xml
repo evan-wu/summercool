@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/config.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 设置 MultipartResolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="maxUploadSize" value="20000000" />
+		<property name="maxInMemorySize" value="30720" />
+	</bean>
+
+	<!-- 设置 HandlerExceptionResolver -->
+	<bean id="handlerExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView" value="/home/views/error" />
+		<property name="defaultStatusCode" value="500" />
+	</bean>
+	<!-- #################################### -->
+
+	<!-- 设置 ViewResolver -->
+
+	<bean name="defaultResourceLoader" class="org.springframework.core.io.DefaultResourceLoader" />
+	<bean name="springTemplateLoader" class="org.summercool.view.freemarker.FreeMarkerTemplateLoader">
+		<constructor-arg index="0" ref="defaultResourceLoader" />
+		<constructor-arg index="1" value="${org.summercool.petstore.template.templateLoaderPath}" />
+	</bean>
+
+	<bean id="freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="${org.summercool.petstore.template.templateLoaderPath}" />
+		<property name="postTemplateLoaders">
+			<array>
+				<ref bean="springTemplateLoader"></ref>
+			</array>
+		</property>
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="number_format">#</prop>
+				<prop key="template_update_delay">${org.summercool.petstore.template.update.delay}</prop>
+				<prop key="classic_compatible">true</prop>
+				<prop key="auto_import">/macro/macros.ftl as spring</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="freemarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="configuration" ref="freemarkerConfiguration" />
+	</bean>
+
+	<!-- Spring MVC页面层FreeMarker的处理类 -->
+
+	<util:map id="uriModuleConstants">
+	</util:map>
+
+	<bean id="freemarkerResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="prefix" value="" />
+		<property name="suffix" value=".ftl" />
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="attributes" ref="uriModuleConstants" />
+	</bean>
+	<!-- #################################### -->
+</beans>
