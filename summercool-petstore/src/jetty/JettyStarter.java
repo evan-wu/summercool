@@ -16,16 +16,6 @@ public class JettyStarter {
 
 	// private static final int NETTY_SERVER_PORT = 8888;
 
-	/**
-	 * @Title: main
-	 * @Description: 用户平台户动函数
-	 * @author Yanjh
-	 * @param args
-	 *        设定文件
-	 * @return void 返回类型
-	 * @throws IOException
-	 * @throws NamingException 
-	 */
 	public static void main(String[] args) throws IOException, NamingException {
 		startJetty();
 	}
