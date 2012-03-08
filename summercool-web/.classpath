@@ -2,5 +2,24 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/cryptix-jce-provider-1.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/ecs-1.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/freemarker-2.3.18.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-0.9.29.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-0.9.29.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/spring-aop-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-asm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-beans-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-support-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-core-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-expression-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-web-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-webmvc-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
