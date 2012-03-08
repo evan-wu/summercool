@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-	<bean name="demo" class="org.summercool.web.module.WebModuleConfigurer">
+	<bean name="petstore" class="org.summercool.web.module.WebModuleConfigurer">
 		<property name="moduleName" value="petstore" />
 		<property name="uriExtension" value=".htm" />
 		<property name="moduleBasePackage" value="org.summercool.platform.web.module" />
