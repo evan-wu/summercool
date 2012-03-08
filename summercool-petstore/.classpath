@@ -8,26 +8,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/cryptix-jce-provider-1.2.2.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ecs-1.4.2.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/freemarker-2.3.18.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/jetty-webapp-7.4.5.v20110725.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/logback-classic-0.9.29.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/logback-core-0.9.29.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/servlet-api-2.5.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-aop-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-asm-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-beans-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-context-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-context-support-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-core-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-expression-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-web-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-webmvc-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/summercool-web-2.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
