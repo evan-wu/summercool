@@ -14,6 +14,9 @@
         padding-top: 60px;
         padding-bottom: 40px;
       }
+	  #tb td ,#tb th{
+		border-top: 0px;
+	  }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -28,35 +31,27 @@
   	${widget("/petstore/widgets/header")}
 
     <div class="container">
+    
+     <table id="tb" class="table table-striped">
+        <tbody>
+		  <tr>
+            <td class="span1"><img src="/images/tb_pet_1.jpg"/></td>
+            <td class="span12">兔子1</td>
+            <td>说明</td>
+          </tr>
+          <tr>
+            <td class="span1"><img src="/images/tb_pet_2.jpg"/></td>
+            <td class="span12">兔子2</td>
+            <td>说明</td>
+          </tr>
+          <tr>
+            <td class="span1"><img src="/images/tb_pet_3.jpg"/></td>
+            <td class="span12">小狗</td>
+            <td>说明</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, Guys!</h1>
-        <p>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			简介：轻量封装Spring MVC<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			因为本人在国内最大的电子商务公司工作期间，深感一个好的Web框架可以大大提高工作效率，而一个不好的Web框架，又可以大大的降低开发效率。所以，在根据笔者在从事电子商务开发的这几年中，对各个应用场景而开发的一个轻量封装Spring MVC的一个Web框架。<br>
-			<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			笔者工作的这几年之中，总结并开发了如下几个框架：<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			summercool-web（Web框架，已经应用于某国内大型网络公司的等重要应用）<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			summercool-hsf（基于Netty实现的RPC框架，已经应用国内某移动互联网公司）<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			summercool-ddl（基于Mybaits的分表分库框架，已经应用国内某移动互联网公司）<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			相继缓存方案、和消息系统解决方案也会慢慢开源。Summercool框架做为笔者的第一个开源框架<br>
-			<br>
-			框架地址：http://summercool.googlecode.com/svn/trunk/summercool-web <br>
-			应用地址：http://summercool.googlecode.com/svn/trunk/summercool-petstore<br> 
-			工具地址：http://summercool.googlecode.com/svn/trunk/summercool-tools<br>
-			说明：此框架要用到spring-tools文件夹中的security文件夹中的文件，使用此框架的人员请将security文件夹的内容替换到JDK中的security文件夹中
-		</p>
-        <p><a class="btn btn-primary btn-large" href="http://dragonsoar.iteye.com/blog/1445669">Learn more &raquo;</a></p>
-      </div>
-      
       <hr>
       ${widget("/petstore/widgets/footer")}
 
