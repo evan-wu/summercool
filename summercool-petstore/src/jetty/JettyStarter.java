@@ -42,6 +42,7 @@ public class JettyStarter {
 		//
 		WebAppContext webAppContext = new WebAppContext();
 		webAppContext.setClassLoader(Thread.currentThread().getContextClassLoader());
+		webAppContext.setDescriptor("/webdefault.xml");
 		webAppContext.setResourceBase("./webapp");
 		webAppContext.setContextPath("/");
 		//
