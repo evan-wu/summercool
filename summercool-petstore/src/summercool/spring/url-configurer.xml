@@ -8,15 +8,13 @@
 		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-<!--
+
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="urlMap">
 			<map>
-				<entry key="/" value="/login.htm" />
-				<entry key="/index.htm" value="/login.htm" />
+				<entry key="/i.htm" value="/index.htm" />
 			</map>
 		</property>
 	</bean>
--->
 
 </beans>
