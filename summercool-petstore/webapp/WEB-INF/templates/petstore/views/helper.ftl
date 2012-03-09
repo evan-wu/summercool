@@ -50,7 +50,7 @@
 			相继缓存方案、和消息系统解决方案也会慢慢开源。Summercool框架做为笔者的第一个开源框架<br>
 			<br>
 			框架地址：http://summercool.googlecode.com/svn/trunk/summercool-web <br>
-			应用地址：http://summercool.googlecode.com/svn/trunk/summercool-petstore<br> 
+			应用地址：http://summercool.googlecode.com/svn/trunk/summercool-petstore（不支持IE6）<br> 
 			工具地址：http://summercool.googlecode.com/svn/trunk/summercool-tools<br>
 			说明：此框架要用到spring-tools文件夹中的security文件夹中的文件，使用此框架的人员请将security文件夹的内容替换到JDK中的security文件夹中
 		</p>
