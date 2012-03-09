@@ -17,7 +17,7 @@ import org.summercool.web.module.cookie.CookieModule;
  * @date 2011-11-24 下午1:15:14
  * @version V1.0
  */
-public class CookieUtil {
+public class CookieUtils {
 
 	static final String[] AUTHORITIES = new String[0];
 
