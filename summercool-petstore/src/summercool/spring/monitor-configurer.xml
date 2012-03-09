@@ -8,18 +8,8 @@
 		http://www.springframework.org/schema/util
 		http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-<!--
-	<bean id="requestMonitor" class="org.summercool.platform.web.module.demo.config.monitor.RequestMonitor">
+	<bean id="requestMonitor" class="org.summercool.platform.web.module.petstore.config.monitor.RequestMonitor">
 		<property name="order" value="0" />
 	</bean>
-	
-	<bean id="preProcessPipeline" class="org.summercool.platform.web.module.demo.config.pipeline.PreProcessPipelineImpl">
-		<property name="order" value="0" />
-	</bean>
-	
-	<bean id="postProcessPipeline" class="org.summercool.platform.web.module.demo.config.pipeline.PostProcessPipelineImpl">
-		<property name="order" value="0" />
-	</bean>
--->
 
 </beans>
