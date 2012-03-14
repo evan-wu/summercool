@@ -47,12 +47,14 @@
 		 	</div>
 		 	
 			&nbsp;
-		 	
+			
 			<#if (status.error)!>
-			 	<div class="alert-message error">
-		  			用户名或密码不正确！
-			 	</div>
-			</#if>
+			<#list status.errors.allErrors as error>
+				<div class="alert alert-error">
+					${error.defaultMessage}
+				</div>
+			</#list>
+		 	</#if>
 	
 			<div class="actions">
 				<input type="submit" value="提交" class="btn">&nbsp;<button class="btn" type="reset">取消</button>
