@@ -18,7 +18,6 @@
 				<value>/login.htm</value>
 				<value>/logout.htm</value>
 				<value>/helper.htm</value>
-				<value>/i.htm</value>
 			</util:list>
 		</property>
 	</bean>
