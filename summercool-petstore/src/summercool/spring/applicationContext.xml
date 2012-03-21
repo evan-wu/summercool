@@ -25,7 +25,7 @@
 
 	<!-- 设置 HandlerExceptionResolver -->
 	<bean id="handlerExceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-		<property name="defaultErrorView" value="/home/views/error" />
+		<property name="defaultErrorView" value="/petstore/views/error" />
 		<property name="defaultStatusCode" value="500" />
 	</bean>
 	<!-- #################################### -->
