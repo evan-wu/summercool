@@ -13,7 +13,7 @@
 		<property name="cookieConfigurerList">
 			<util:list>
 				<bean name="id" class="org.summercool.web.beans.cookie.CookieConfigurer">
-					<property name="domain" value="" />
+					<property name="domain" value="127.0.0.1" />
 					<property name="lifeTime" value="-1" />
 					<property name="name" value="id" />
 					<property name="clientName" value="__i__" />
@@ -21,7 +21,7 @@
 				</bean>
 
 				<bean name="uname" class="org.summercool.web.beans.cookie.CookieConfigurer">
-					<property name="domain" value="" />
+					<property name="domain" value="127.0.0.1" />
 					<property name="lifeTime" value="-1" />
 					<property name="name" value="uname" />
 					<property name="clientName" value="__uli__" />
@@ -29,7 +29,7 @@
 				</bean>
 
 				<bean name="password" class="org.summercool.web.beans.cookie.CookieConfigurer">
-					<property name="domain" value="" />
+					<property name="domain" value="127.0.0.1" />
 					<property name="lifeTime" value="-1" />
 					<property name="name" value="password" />
 					<property name="clientName" value="__up__" />
@@ -37,7 +37,7 @@
 				</bean>
 
 				<bean name="csrf" class="org.summercool.web.beans.cookie.CookieConfigurer">
-					<property name="domain" value="" />
+					<property name="domain" value="127.0.0.1" />
 					<property name="lifeTime" value="-1" />
 					<property name="name" value="csrf" />
 					<property name="clientName" value="__rf__" />
