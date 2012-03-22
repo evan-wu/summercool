@@ -23,6 +23,7 @@ public class LoginController extends SimpleFormController {
 	protected void onBindOnNewForm(HttpServletRequest request, Object command) throws Exception {
 		LoginFormBean loginFormBean = (LoginFormBean) command;
 		loginFormBean.setUserName("请输入用户名和密码");
+		loginFormBean.setPassword("");
 	}
 
 	@Override
