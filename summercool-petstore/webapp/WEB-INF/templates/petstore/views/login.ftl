@@ -43,7 +43,7 @@
 			&nbsp;
 	
 		 	<div class="input">
-	  			密码: <input type="password" size="30" name="password" id="password" class="medium">
+	  			密码: <input type="password" size="30" name="password" id="password" class="medium" value="${(loginFormBean.password)!}">
 		 	</div>
 		 	
 			&nbsp;
