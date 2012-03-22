@@ -21,7 +21,7 @@ public class DefaultExceptionHandler implements ExceptionPipeline {
 		logger.error(stackTrace);
 
 		if (mv != null) {
-			mv.setViewName("redirect:/index.htm");			
+			mv.setViewName("redirect:/index.htm");
 		} else {
 			throwable.printStackTrace();
 		}
