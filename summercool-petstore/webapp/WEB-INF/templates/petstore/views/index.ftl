@@ -36,7 +36,7 @@
         <tbody>
 		  <tr>
             <td class="span1"><img src="/images/tb_pet_1.jpg"/></td>
-            <td class="span12"><a href="/item/1.htm">兔子1</a></td>
+            <td class="span12"><a href="${url("item",param("id","1"))}">兔子1</a></td>
             <td>说明</td>
           </tr>
           <tr>
