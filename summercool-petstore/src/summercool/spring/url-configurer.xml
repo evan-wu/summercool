@@ -16,5 +16,17 @@
 			</map>
 		</property>
 	</bean>
+	
+	<bean name="cookieConfigurer" class="org.summercool.web.module.UrlBuilderModuleConfigurer">
+		<property name="cookieConfigurerList">
+			<util:list>
+				<bean name="id" class="org.summercool.beans.url.DefaultUrlBuilderBeanDefinition">
+					<property name="uriTemplateModule" value="item" />
+					<property name="seq" value="1" />
+					<property name="uriTemplate" value="/item/#id#.htm" />
+				</bean>
+			</util:list>
+		</property>
+	</bean>
 
 </beans>
