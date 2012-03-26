@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 		http://www.springframework.org/schema/context
@@ -16,16 +17,18 @@
 			</map>
 		</property>
 	</bean>
-	
-	<bean name="cookieConfigurer" class="org.summercool.web.module.UrlBuilderModuleConfigurer">
-		<property name="cookieConfigurerList">
-			<util:list>
-				<bean name="id" class="org.summercool.beans.url.DefaultUrlBuilderBeanDefinition">
-					<property name="uriTemplateModule" value="item" />
-					<property name="seq" value="1" />
-					<property name="uriTemplate" value="/item/#id#.htm" />
-				</bean>
-			</util:list>
+
+	<bean name="urlModuleConfigurer" class="org.summercool.web.module.UrlBuilderModuleConfigurer">
+		<property name="urlBuilderBeanMap">
+			<util:map>
+				<entry>
+					<key><value>item</value></key>
+					<bean name="id" class="org.summercool.beans.url.DefaultUrlBuilderBeanDefinition">
+						<property name="seq" value="1" />
+						<property name="uriTemplate" value="/item/#id#.htm" />
+					</bean>
+				</entry>
+			</util:map>
 		</property>
 	</bean>
 

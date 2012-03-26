@@ -29,9 +29,8 @@
 
   <body>
   	${widget("/petstore/widgets/header")}
-
     <div class="container">
-    
+	
      <table id="tb" class="table table-striped">
         <tbody>
 		  <tr>
@@ -39,22 +38,11 @@
             <td class="span12"><a href="/item/1.htm">兔子1</a></td>
             <td>说明</td>
           </tr>
-          <tr>
-            <td class="span1"><img src="/images/tb_pet_2.jpg"/></td>
-            <td class="span12">兔子2</td>
-            <td>说明</td>
-          </tr>
-          <tr>
-            <td class="span1"><img src="/images/tb_pet_3.jpg"/></td>
-            <td class="span12">小狗</td>
-            <td>说明</td>
-          </tr>
         </tbody>
       </table>
 
       <hr>
       ${widget("/petstore/widgets/footer")}
-
     </div>
 
   </body>
