@@ -25,7 +25,7 @@ public class ItemDetailController extends AbstractController {
 		Map<String, String> map = urlBuilderBean.getUriTemplateVariables();
 		try {
 			String id = map.get("id");
-			// 在这里可以写一些业务逻辑，比如在DB中查找到item信息收直接显示detail页面
+			// 在这里可以写一些业务逻辑，比如在DB中查找到item信息收直接显示detail页面，否则返回到/login.htm页面
 			Long.valueOf(id);
 		} catch (Exception e) {
 			return new ModelAndView("redirect:/index.htm");
