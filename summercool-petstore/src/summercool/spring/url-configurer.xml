@@ -25,7 +25,7 @@
 					<key><value>item</value></key>
 					<bean name="id" class="org.summercool.beans.url.DefaultUrlBuilderBeanDefinition">
 						<property name="seq" value="1" />
-						<property name="uriTemplate" value="/item/#id#.htm" />
+						<property name="uriTemplate" value="/item/{id}.htm" />
 					</bean>
 				</entry>
 			</util:map>
