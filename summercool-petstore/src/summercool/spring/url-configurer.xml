@@ -12,7 +12,7 @@
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="urlMap">
 			<map>
-				<entry key="/i.htm" value="/index.htm" />
+				<entry key="/item/*.htm" value="/item/item_detail.htm" />
 			</map>
 		</property>
 	</bean>
