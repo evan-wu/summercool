@@ -53,7 +53,7 @@ public class ModifyItemsController extends SimpleFormController {
 		for (int i = 0; i < formBean.getPets().size(); i++) {
 			Pet pet = formBean.getPets().get(i);
 			if (!"25".equals(pet.getAge())) {
-				errors.reject("" + i, "年龄必须为25!");
+				errors.reject("pets[" + i + "]", "年龄必须为25!");
 			}
 		}
 	}
