@@ -62,6 +62,7 @@ public class XmlWebApplicationContext extends org.springframework.web.context.su
 		SimpleUrlHandlerMapping simpleUrlHandlerMapping = new SimpleUrlHandlerMapping();
 		simpleUrlHandlerMapping.setUrlMap(scanner.getControllers());
 		simpleUrlHandlerMapping.setUrlPathHelper(urlPathHelper);
+		simpleUrlHandlerMapping.setOrder(-Integer.MAX_VALUE);
 		//
 		beanFactory.initializeBean(simpleUrlHandlerMapping, DispatcherServlet.SUMMERCOOL_HANDLER_MAPPING_BEAN_NAME);
 		beanFactory.registerSingleton(DispatcherServlet.SUMMERCOOL_HANDLER_MAPPING_BEAN_NAME, simpleUrlHandlerMapping);
