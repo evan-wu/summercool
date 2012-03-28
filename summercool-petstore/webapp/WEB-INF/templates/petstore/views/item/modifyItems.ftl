@@ -30,16 +30,49 @@
   <body>
   	${widget("/petstore/widgets/header")}
     <div class="container">
-	
+    
+	<form method="post" action="/item/modify_items.htm">
+	<@spring.bind "modifyItemsFormBean.*"/>
      <table id="tb" class="table table-striped">
         <tbody>
 		  <tr>
             <td class="span1"><img src="/images/tb_pet_1.jpg"/></td>
-            <td class="span12"><a href="/item/1.htm">兔子1</a></td>
+            <td class="span2"><a href="/item/1.htm">兔子1</a></td>
+			<td class="span10">
+				名字：<input type="text" name="pets[0].name" value="${modifyItemsFormBean.pets[0].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				年龄：<input type="text" name="pets[0].age" value="${modifyItemsFormBean.pets[0].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+            <td>说明</td>
+			 <tr>
+            <td class="span1"><img src="/images/tb_pet_2.jpg"/></td>
+            <td class="span2"><a href="/item/1.htm">兔子2</a></td>
+			<td class="span10">
+				名字：<input type="text" name="pets[1].name" value="${modifyItemsFormBean.pets[1].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				年龄：<input type="text" name="pets[1].age" value="${modifyItemsFormBean.pets[1].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+            <td>说明</td>
+			 <tr>
+            <td class="span1"><img src="/images/tb_pet_3.jpg"/></td>
+            <td class="span2"><a href="/item/1.htm">小狗1</a></td>
+			<td class="span10">
+				名字：<input type="text" name="pets[2].name" value="${modifyItemsFormBean.pets[2].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				年龄：<input type="text" name="pets[2].age" value="${modifyItemsFormBean.pets[2].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
             <td>说明</td>
           </tr>
         </tbody>
       </table>
+      		<#if (status.error)!>
+				<#list status.errors.allErrors as error>
+					<div class="alert alert-error">
+						${error.defaultMessage}
+					</div>
+				</#list>
+		 	</#if>
+      		<div class="actions">
+				<input type="submit" value="提交" class="btn">&nbsp;<button class="btn" type="reset">取消</button>
+			</div>
+      </form>
 
       <hr>
       ${widget("/petstore/widgets/footer")}
