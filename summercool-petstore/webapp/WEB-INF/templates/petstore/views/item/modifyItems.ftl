@@ -41,6 +41,7 @@
 			<td class="span10">
 				名字：<input type="text" name="pets[0].name" value="${modifyItemsFormBean.pets[0].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				年龄：<input type="text" name="pets[0].age" value="${modifyItemsFormBean.pets[0].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				${error(status,"pets[0]")}
 			</td>
             <td>说明</td>
 			 <tr>
@@ -49,6 +50,7 @@
 			<td class="span10">
 				名字：<input type="text" name="pets[1].name" value="${modifyItemsFormBean.pets[1].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				年龄：<input type="text" name="pets[1].age" value="${modifyItemsFormBean.pets[1].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				${error(status,"pets[1]")}
 			</td>
             <td>说明</td>
 			 <tr>
@@ -57,18 +59,12 @@
 			<td class="span10">
 				名字：<input type="text" name="pets[2].name" value="${modifyItemsFormBean.pets[2].name}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				年龄：<input type="text" name="pets[2].age" value="${modifyItemsFormBean.pets[2].age}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				${error(status,"pets[2]")}
 			</td>
             <td>说明</td>
           </tr>
         </tbody>
       </table>
-      		<#if (status.error)!>
-				<#list status.errors.allErrors as error>
-					<div class="alert alert-error">
-						${error.defaultMessage}
-					</div>
-				</#list>
-		 	</#if>
       		<div class="actions">
 				<input type="submit" value="提交" class="btn">&nbsp;<button class="btn" type="reset">取消</button>
 			</div>
