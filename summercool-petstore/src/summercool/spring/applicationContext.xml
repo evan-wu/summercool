@@ -64,6 +64,10 @@
 	<!-- Spring MVC页面层FreeMarker的处理类 -->
 
 	<util:map id="uriModuleConstants">
+		<entry>
+			<key><value>error</value></key>
+			<bean class="org.summercool.platform.web.module.petstore.config.freemarker.FreeMarkerErrorFunction"/>
+		</entry>
 	</util:map>
 
 	<bean id="freemarkerResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
