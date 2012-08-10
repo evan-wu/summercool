@@ -70,8 +70,7 @@ public abstract class UriTemplateUtils {
 			if (uriTemplate.contains(placeholder)) {
 				url = url.replace(placeholder, encodeUrl(String.valueOf(entry.getValue())));
 			} else if (StringUtils.hasText(String.valueOf(entry.getValue()))) {
-				url += (url.contains("?") ? "&" : "?") + entry.getKey() + "="
-						+ encodeUrl(String.valueOf(entry.getValue()));
+				url += (url.contains("?") ? "&" : "?") + entry.getKey() + "=" + encodeUrl(String.valueOf(entry.getValue()));
 			}
 		}
 		return url;
