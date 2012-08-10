@@ -5,36 +5,36 @@ import java.util.UUID;
 
 public class ShortUtils {
 
-	private static final String[] l = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f",
-			"g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A",
-			"B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V",
-			"W", "X", "Y", "Z" };
+	private static String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-	public static String tentoN(long value, int number) {
-		if (number <= 1 || number > l.length) {
-			throw new RuntimeException("Faild");
+	public static String encoding(long num) {
+		if (num < 1) {
+			throw new RuntimeException("num must be greater than 0.");
 		}
-		// 负数处理
-		if (value < 0) {
-			return "-" + tentoN(0 - value, number);
+		StringBuilder sb = new StringBuilder();
+		for (; num > 0; num /= 62) {
+			sb.append(ALPHABET.charAt((int) (num % 62)));
 		}
-		if (value < number) {
-			return l[(int) value];
-		} else {
-			long n = value % (long) number;
-			return (tentoN(value / number, number) + l[(int) n]);
-		}
+		return sb.toString();
 	}
 
-	public static String build(long l) {
-		return tentoN(l, 62);
+	public static long decoding(String str) {
+		str = str.trim();
+		if (str.length() < 1) {
+			throw new RuntimeException("str must not be empty.");
+		}
+		long result = 0;
+		for (int i = 0; i < str.length(); i++) {
+			result += (long) (ALPHABET.indexOf(str.charAt(i)) * Math.pow(62, i));
+		}
+		return result;
 	}
 
 	public static String buildByUUID() {
 		UUID uuid = UUID.randomUUID();
 		long most = uuid.getMostSignificantBits();
 		long least = uuid.getLeastSignificantBits();
-		return build(Math.abs(most)) + build(Math.abs(least));
+		return encoding(Math.abs(most)) + encoding(Math.abs(least));
 	}
 
 	public static void main(String[] args) throws IOException {
