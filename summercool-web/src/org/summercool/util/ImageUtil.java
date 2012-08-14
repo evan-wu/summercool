@@ -315,7 +315,7 @@ public class ImageUtil {
 		FileInputStream in = new FileInputStream(new File("D:/gif/f1.jpg"));
 		FileOutputStream out = new FileOutputStream(new File("D:/gif/f1_b.jpg"));
 		try {
-			resizeJpg(in, out, 640, 640, 0.85f, new String[] {}, FONT, FONT_COLOR);
+			resizeJpg(in, out, 640, 640, 0.85f, new String[] {"@王少-_-","weibo.com/dragonsoar"}, FONT, FONT_COLOR);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
