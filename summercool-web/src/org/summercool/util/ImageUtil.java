@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
+import java.awt.Transparency;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
@@ -23,6 +24,7 @@ import org.summercool.image.Scalr;
 import org.summercool.image.Scalr.Method;
 import org.summercool.image.Scalr.Mode;
 
+import com.sun.image.codec.jpeg.ImageFormatException;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
@@ -311,16 +313,135 @@ public class ImageUtil {
 		}
 	}
 
+	public static void makeJpg(String text, OutputStream out, int maxWidth, Font font, Color fontColor)
+			throws ImageFormatException, IOException {
+		int xM = 8;
+		int yM = 25;
+		int cHeight = 0;
+		int maxHeight = 0;
+		int line;
+		if (font == null) {
+			font = FONT;
+		}
+
+		BufferedImage nImage = new BufferedImage(maxWidth, 549, BufferedImage.TYPE_INT_RGB);
+		Graphics2D ng = nImage.createGraphics();
+		{
+			FontRenderContext context = ng.getFontRenderContext();
+			int spaceWidth = (int) font.getStringBounds("　", context).getWidth();
+			line = 0;
+			int lineWidth = 0;
+			for (int i = 0; i < text.length(); i++) {
+				char c = text.charAt(i);
+				Rectangle2D fontRectangle = font.getStringBounds(String.valueOf(c), context);
+				int sw = (int) fontRectangle.getWidth();
+				int sh = (int) fontRectangle.getHeight();
+				if (cHeight == 0) {
+					cHeight = sh;
+				}
+				if (c == '\n') {
+					line = line + 1;
+					lineWidth = 0;
+					continue;
+				}
+				if (c == '\t') {
+					sw = spaceWidth * 2;
+				}
+				//
+				lineWidth = lineWidth + sw;
+				if (lineWidth > maxWidth - 10 * 2) {
+					line = line + 1;
+					lineWidth = 0 + sw;
+				} else if (lineWidth == maxWidth - 10 * 2) {
+					line = line + 1;
+					lineWidth = 0;
+				}
+			}
+		}
+		maxHeight = yM * 2 + cHeight * line;
+
+		// create new image with right size/format
+		BufferedImage image;		
+		BufferedImage bufferedImage = new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2d = bufferedImage.createGraphics();
+		 // ----------   增加下面的代码使得背景透明   -----------------
+		image = g2d.getDeviceConfiguration().createCompatibleImage(maxWidth, maxHeight, Transparency.TRANSLUCENT);
+		g2d.dispose();
+		//
+		Graphics2D graphics = image.createGraphics();
+		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		graphics.setFont(font);
+		if (fontColor != null) {
+			graphics.setColor(fontColor);
+		} else {
+			graphics.setColor(FONT_COLOR);
+		}
+		//
+		FontRenderContext context = graphics.getFontRenderContext();
+
+		line = 0;
+		int lineWidth = 0;
+		StringBuilder sb = new StringBuilder();
+		int spaceWidth = (int) font.getStringBounds("　", context).getWidth();
+		for (int i = 0; i < text.length(); i++) {
+			char c = text.charAt(i);
+			String str = String.valueOf(c);
+			Rectangle2D fontRectangle = font.getStringBounds(String.valueOf(c), context);
+			int sw = (int) fontRectangle.getWidth();
+			int sh = (int) fontRectangle.getHeight();
+
+			if (c == '\n') {
+				graphics.drawString(sb.toString(), xM, yM + (line * sh));
+				sb = new StringBuilder();
+				line = line + 1;
+				lineWidth = 0;
+				continue;
+			}
+			if (c == '\t') {
+				str = "　　";
+				sw = spaceWidth * 2;
+			}
+			lineWidth = lineWidth + sw;
+			if (lineWidth > maxWidth - 10 * 2) {
+				graphics.drawString(sb.toString(), xM, yM + (line * sh));
+				sb = new StringBuilder();
+				sb.append(str);
+				line = line + 1;
+				lineWidth = 0 + sw;
+			} else if (lineWidth == maxWidth - 10 * 2) {
+				sb.append(str);
+				graphics.drawString(sb.toString(), xM, yM + (line * sh));
+				sb = new StringBuilder();
+				line = line + 1;
+				lineWidth = 0;
+			} else {
+				sb.append(str);
+				if (i == text.length() - 1) {
+					graphics.drawString(sb.toString(), xM, yM + (line * sh));
+				}
+			}
+		}
+
+		graphics.dispose();
+		//
+		ImageIO.write(image, "png", out);
+	}
+
 	public static void main(String[] args) throws IOException {
-		FileInputStream in = new FileInputStream(new File("D:/gif/f1.jpg"));
-		FileOutputStream out = new FileOutputStream(new File("D:/gif/f1_b.jpg"));
+		FileInputStream in = new FileInputStream(new File("D:/gif/tojpeg.png"));
+		FileOutputStream out = new FileOutputStream(new File("D:/gif/tojpeg_pp2.jpg"));
 		try {
-			resizeJpg(in, out, 640, 640, 0.85f, new String[] {"@王少-_-","weibo.com/dragonsoar"}, FONT, FONT_COLOR);
+			resizeJpg(in, out, 640, 640, 0.85f, new String[] { "@王少-_-", "weibo.com/dragonsoar" }, FONT, FONT_COLOR);
+
+			// makeJpg(new String(FileCopyUtils.copyToByteArray(new
+			// File("D:/gif/g.txt")), "UTF-8"), out, 598, new Font(
+			// "微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			out.close();
-			in.close();
 		}
 	}
 }
