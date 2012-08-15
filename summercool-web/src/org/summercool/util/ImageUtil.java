@@ -9,6 +9,8 @@ import java.awt.Transparency;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -268,7 +270,7 @@ public class ImageUtil {
 		ge.finish();
 	}
 
-	private static void makeWatermark(String[] text, BufferedImage image, Font font, Color fontColor) {
+	public static void makeWatermark(String[] text, BufferedImage image, Font font, Color fontColor) {
 		Graphics2D graphics = image.createGraphics();
 		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		if (font != null) {
@@ -370,7 +372,7 @@ public class ImageUtil {
 		g2d.dispose();
 		//
 		Graphics2D graphics = image.createGraphics();
-		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		graphics.setFont(font);
 		if (fontColor != null) {
 			graphics.setColor(fontColor);
@@ -431,7 +433,7 @@ public class ImageUtil {
 
 	public static void main(String[] args) throws IOException {
 		FileInputStream in = new FileInputStream(new File("D:/gif/tojpeg.png"));
-		FileOutputStream out = new FileOutputStream(new File("D:/gif/g_b.png"));
+		FileOutputStream out = new FileOutputStream(new File("D:/gif/g_sw.png"));
 		try {
 			// resizeJpg(in, out, 640, 640, 0.85f, new String[] { "@王少-_-",
 			// "weibo.com/dragonsoar" }, FONT, FONT_COLOR);
@@ -440,8 +442,16 @@ public class ImageUtil {
 			// File("D:/gif/g.txt")), "UTF-8"), out, 598, 16,
 			// new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
 
-			makePng(new String(FileCopyUtils.copyToByteArray(new File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
+			// makePng(new String(FileCopyUtils.copyToByteArray(new
+			// File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
+			// new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			makePng(new String(FileCopyUtils.copyToByteArray(new File("D:/gif/g.txt")), "UTF-8"), baos, 598, -1,
 					new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
+			BufferedImage image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+			makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, new Font("微软雅黑", Font.BOLD, 12), new Color(0, 0, 0, 150));
+			ImageIO.write(image, "png", out);
 
 		} catch (Exception e) {
 			e.printStackTrace();
