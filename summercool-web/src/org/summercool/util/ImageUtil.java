@@ -18,6 +18,7 @@ import java.io.OutputStream;
 
 import javax.imageio.ImageIO;
 
+import org.springframework.util.FileCopyUtils;
 import org.summercool.image.AnimatedGifEncoder;
 import org.summercool.image.GifDecoder;
 import org.summercool.image.Scalr;
@@ -313,11 +314,11 @@ public class ImageUtil {
 		}
 	}
 
-	public static void makeJpg(String text, OutputStream out, int maxWidth, Font font, Color fontColor)
+	public static void makePng(String text, OutputStream out, int maxWidth, int cHeight, Font font, Color fontColor)
 			throws ImageFormatException, IOException {
 		int xM = 8;
 		int yM = 25;
-		int cHeight = 0;
+		cHeight = cHeight <= 0 ? 0 : cHeight;
 		int maxHeight = 0;
 		int line;
 		if (font == null) {
@@ -361,10 +362,10 @@ public class ImageUtil {
 		maxHeight = yM * 2 + cHeight * line;
 
 		// create new image with right size/format
-		BufferedImage image;		
+		BufferedImage image;
 		BufferedImage bufferedImage = new BufferedImage(maxWidth, maxHeight, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g2d = bufferedImage.createGraphics();
-		 // ----------   增加下面的代码使得背景透明   -----------------
+		// ---------- 增加下面的代码使得背景透明 -----------------
 		image = g2d.getDeviceConfiguration().createCompatibleImage(maxWidth, maxHeight, Transparency.TRANSLUCENT);
 		g2d.dispose();
 		//
@@ -388,7 +389,8 @@ public class ImageUtil {
 			String str = String.valueOf(c);
 			Rectangle2D fontRectangle = font.getStringBounds(String.valueOf(c), context);
 			int sw = (int) fontRectangle.getWidth();
-			int sh = (int) fontRectangle.getHeight();
+			// int sh = (int) fontRectangle.getHeight();
+			int sh = cHeight;
 
 			if (c == '\n') {
 				graphics.drawString(sb.toString(), xM, yM + (line * sh));
@@ -429,18 +431,22 @@ public class ImageUtil {
 
 	public static void main(String[] args) throws IOException {
 		FileInputStream in = new FileInputStream(new File("D:/gif/tojpeg.png"));
-		FileOutputStream out = new FileOutputStream(new File("D:/gif/tojpeg_pp2.jpg"));
+		FileOutputStream out = new FileOutputStream(new File("D:/gif/g_b.png"));
 		try {
-			resizeJpg(in, out, 640, 640, 0.85f, new String[] { "@王少-_-", "weibo.com/dragonsoar" }, FONT, FONT_COLOR);
+			// resizeJpg(in, out, 640, 640, 0.85f, new String[] { "@王少-_-",
+			// "weibo.com/dragonsoar" }, FONT, FONT_COLOR);
 
-			// makeJpg(new String(FileCopyUtils.copyToByteArray(new
-			// File("D:/gif/g.txt")), "UTF-8"), out, 598, new Font(
-			// "微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
-			
-			
+			// makePng(new String(FileCopyUtils.copyToByteArray(new
+			// File("D:/gif/g.txt")), "UTF-8"), out, 598, 16,
+			// new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
+
+			makePng(new String(FileCopyUtils.copyToByteArray(new File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
+					new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			in.close();
 			out.close();
 		}
 	}
