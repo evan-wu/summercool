@@ -370,7 +370,7 @@ public class ImageUtil {
 		g2d.dispose();
 		//
 		Graphics2D graphics = image.createGraphics();
-		graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		graphics.setFont(font);
 		if (fontColor != null) {
 			graphics.setColor(fontColor);
@@ -441,7 +441,7 @@ public class ImageUtil {
 			// new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
 
 			makePng(new String(FileCopyUtils.copyToByteArray(new File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
-					new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
+					new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
 
 		} catch (Exception e) {
 			e.printStackTrace();
