@@ -457,8 +457,9 @@ public class ImageUtil {
 //			Color watermarkFontColor = new Color(0, 0, 0, 150);
 
 			long begin = System.currentTimeMillis();
-			makePng(new String(bytes), out, 435, -1, pngFont, pngFontColor);
+			makePng(new String(bytes), out, 598, -1, pngFont, pngFontColor);
 			System.out.println(System.currentTimeMillis() - begin);
+			
 //			BufferedImage image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
 //			makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, watermarkFont, watermarkFontColor);
 //			ImageIO.write(image, "png", out);
