@@ -9,8 +9,6 @@ import java.awt.Transparency;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -323,22 +321,29 @@ public class ImageUtil {
 		cHeight = cHeight <= 0 ? 0 : cHeight;
 		int maxHeight = 0;
 		int line;
+		int spaceWidth;
+		int spaceHeight;
+		int halfWidth;
 		if (font == null) {
 			font = FONT;
 		}
 
-		BufferedImage nImage = new BufferedImage(maxWidth, 549, BufferedImage.TYPE_INT_RGB);
+		BufferedImage nImage = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
 		Graphics2D ng = nImage.createGraphics();
 		{
 			FontRenderContext context = ng.getFontRenderContext();
-			int spaceWidth = (int) font.getStringBounds("　", context).getWidth();
+			Rectangle2D rect = font.getStringBounds("　", context);
+			spaceWidth = (int) rect.getWidth();
+			spaceHeight = (int) rect.getHeight();
+			halfWidth = (int) font.getStringBounds("Q", context).getWidth();
+
 			line = 0;
 			int lineWidth = 0;
 			for (int i = 0; i < text.length(); i++) {
 				char c = text.charAt(i);
-				Rectangle2D fontRectangle = font.getStringBounds(String.valueOf(c), context);
-				int sw = (int) fontRectangle.getWidth();
-				int sh = (int) fontRectangle.getHeight();
+				int sw = spaceWidth;
+				int sh = spaceHeight;
+
 				if (cHeight == 0) {
 					cHeight = sh;
 				}
@@ -349,6 +354,8 @@ public class ImageUtil {
 				}
 				if (c == '\t') {
 					sw = spaceWidth * 2;
+				} else if (c >= 0 && c < 128) {
+					sw = halfWidth;
 				}
 				//
 				lineWidth = lineWidth + sw;
@@ -380,17 +387,13 @@ public class ImageUtil {
 			graphics.setColor(FONT_COLOR);
 		}
 		//
-		FontRenderContext context = graphics.getFontRenderContext();
-
 		line = 0;
 		int lineWidth = 0;
 		StringBuilder sb = new StringBuilder();
-		int spaceWidth = (int) font.getStringBounds("　", context).getWidth();
 		for (int i = 0; i < text.length(); i++) {
 			char c = text.charAt(i);
 			String str = String.valueOf(c);
-			Rectangle2D fontRectangle = font.getStringBounds(String.valueOf(c), context);
-			int sw = (int) fontRectangle.getWidth();
+			int sw = spaceWidth;
 			// int sh = (int) fontRectangle.getHeight();
 			int sh = cHeight;
 
@@ -404,6 +407,8 @@ public class ImageUtil {
 			if (c == '\t') {
 				str = "　　";
 				sw = spaceWidth * 2;
+			} else if (c > 00 && c < 128) {
+				sw = halfWidth;
 			}
 			lineWidth = lineWidth + sw;
 			if (lineWidth > maxWidth - 10 * 2) {
@@ -425,7 +430,6 @@ public class ImageUtil {
 				}
 			}
 		}
-
 		graphics.dispose();
 		//
 		ImageIO.write(image, "png", out);
@@ -446,12 +450,28 @@ public class ImageUtil {
 			// File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
 			// new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
 
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			makePng(new String(FileCopyUtils.copyToByteArray(new File("D:/gif/g.txt")), "UTF-8"), baos, 598, -1,
-					new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
-			BufferedImage image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
-			makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, new Font("微软雅黑", Font.BOLD, 12), new Color(0, 0, 0, 150));
-			ImageIO.write(image, "png", out);
+			byte[] bytes = FileCopyUtils.copyToByteArray(new File("D:/gif/gsyh.txt"));
+			Font pngFont = new Font("微软雅黑", Font.PLAIN, 14);
+			Color pngFontColor = new Color(0, 0, 0, 200);
+//			Font watermarkFont = new Font("微软雅黑", Font.BOLD, 12);
+//			Color watermarkFontColor = new Color(0, 0, 0, 150);
+
+			long begin = System.currentTimeMillis();
+			makePng(new String(bytes), out, 598, -1, pngFont, pngFontColor);
+			System.out.println(System.currentTimeMillis() - begin);
+//			BufferedImage image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+//			makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, watermarkFont, watermarkFontColor);
+//			ImageIO.write(image, "png", out);
+
+//			long begin = System.currentTimeMillis();
+//			for (int i = 0; i < 10; i++) {
+//				baos = new ByteArrayOutputStream();
+//				makePng(new String(bytes), baos, 598, -1, pngFont, pngFontColor);
+//				image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+//				makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, watermarkFont, watermarkFontColor);
+//				ImageIO.write(image, "png", out);
+//			}
+//			System.out.println(System.currentTimeMillis() - begin);
 
 		} catch (Exception e) {
 			e.printStackTrace();
