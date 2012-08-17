@@ -9,16 +9,14 @@ import java.awt.Transparency;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import org.springframework.util.FileCopyUtils;
 import org.summercool.image.AnimatedGifEncoder;
 import org.summercool.image.GifDecoder;
 import org.summercool.image.Scalr;
@@ -36,6 +34,8 @@ public class ImageUtil {
 	static final Color COLOR = Color.WHITE;
 	static final Color FONT_COLOR = new Color(255, 255, 255, 150);
 	static final Color FONT_SHADOW_COLOR = new Color(170, 170, 170, 77);
+
+	private static Map<Font, Map<String, int[]>> FONT_REC_MAP = new HashMap<Font, Map<String, int[]>>();
 
 	public static boolean isJpg(String str) {
 		return isEndWid(str, "jpg");
@@ -323,19 +323,14 @@ public class ImageUtil {
 		int line;
 		int spaceWidth;
 		int spaceHeight;
-		int halfWidth;
 		if (font == null) {
 			font = FONT;
 		}
 
-		BufferedImage nImage = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
-		Graphics2D ng = nImage.createGraphics();
+		buildFontRec(font);
 		{
-			FontRenderContext context = ng.getFontRenderContext();
-			Rectangle2D rect = font.getStringBounds("　", context);
-			spaceWidth = (int) rect.getWidth();
-			spaceHeight = (int) rect.getHeight();
-			halfWidth = (int) font.getStringBounds("Q", context).getWidth();
+			spaceWidth = FONT_REC_MAP.get(font).get("　")[0];
+			spaceHeight = FONT_REC_MAP.get(font).get("　")[1];
 
 			line = 0;
 			int lineWidth = 0;
@@ -355,7 +350,7 @@ public class ImageUtil {
 				if (c == '\t') {
 					sw = spaceWidth * 2;
 				} else if (c >= 0 && c < 128) {
-					sw = halfWidth;
+					sw = FONT_REC_MAP.get(font).get(String.valueOf(c))[0];
 				}
 				//
 				lineWidth = lineWidth + sw;
@@ -408,7 +403,7 @@ public class ImageUtil {
 				str = "　　";
 				sw = spaceWidth * 2;
 			} else if (c > 00 && c < 128) {
-				sw = halfWidth;
+				sw = FONT_REC_MAP.get(font).get(String.valueOf(c))[0];
 			}
 			lineWidth = lineWidth + sw;
 			if (lineWidth > maxWidth - 10 * 2) {
@@ -435,50 +430,28 @@ public class ImageUtil {
 		ImageIO.write(image, "png", out);
 	}
 
-	public static void main(String[] args) throws IOException {
-		FileInputStream in = new FileInputStream(new File("D:/gif/tojpeg.png"));
-		FileOutputStream out = new FileOutputStream(new File("D:/gif/g_sw.png"));
-		try {
-			// resizeJpg(in, out, 640, 640, 0.85f, new String[] { "@王少-_-",
-			// "weibo.com/dragonsoar" }, FONT, FONT_COLOR);
+	public static synchronized void buildFontRec(Font font) {
+		if (FONT_REC_MAP.get(font) != null) {
+			return;
+		}
+		{
+			Map<String, int[]> map = new HashMap<String, int[]>();
+			BufferedImage nImage = new BufferedImage(1, 1, BufferedImage.TYPE_INT_RGB);
+			Graphics2D ng = nImage.createGraphics();
+			FontRenderContext context = ng.getFontRenderContext();
 
-			// makePng(new String(FileCopyUtils.copyToByteArray(new
-			// File("D:/gif/g.txt")), "UTF-8"), out, 598, 16,
-			// new Font("微软雅黑", Font.PLAIN, 16), new Color(0, 0, 0, 200));
-
-			// makePng(new String(FileCopyUtils.copyToByteArray(new
-			// File("D:/gif/g.txt")), "UTF-8"), out, 598, -1,
-			// new Font("微软雅黑", Font.PLAIN, 14), new Color(0, 0, 0, 200));
-
-			byte[] bytes = FileCopyUtils.copyToByteArray(new File("D:/gif/gsyh.txt"));
-			Font pngFont = new Font("微软雅黑", Font.PLAIN, 14);
-			Color pngFontColor = new Color(0, 0, 0, 200);
-//			Font watermarkFont = new Font("微软雅黑", Font.BOLD, 12);
-//			Color watermarkFontColor = new Color(0, 0, 0, 150);
-
-			long begin = System.currentTimeMillis();
-			makePng(new String(bytes), out, 598, -1, pngFont, pngFontColor);
-			System.out.println(System.currentTimeMillis() - begin);
-			
-//			BufferedImage image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
-//			makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, watermarkFont, watermarkFontColor);
-//			ImageIO.write(image, "png", out);
-
-//			long begin = System.currentTimeMillis();
-//			for (int i = 0; i < 10; i++) {
-//				baos = new ByteArrayOutputStream();
-//				makePng(new String(bytes), baos, 598, -1, pngFont, pngFontColor);
-//				image = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
-//				makeWatermark(new String[] { "@王少-_-", "weibo.com/dragonsoar" }, image, watermarkFont, watermarkFontColor);
-//				ImageIO.write(image, "png", out);
-//			}
-//			System.out.println(System.currentTimeMillis() - begin);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			in.close();
-			out.close();
+			Rectangle2D rect = font.getStringBounds("　", context);
+			int spaceWidth = (int) rect.getWidth();
+			int spaceHeight = (int) rect.getHeight();
+			map.put("　", new int[] { spaceWidth, spaceHeight });
+			//
+			for (int i = 0; i < 128; i++) {
+				rect = font.getStringBounds(String.valueOf((char) i), context);
+				spaceWidth = (int) rect.getWidth();
+				spaceHeight = (int) rect.getHeight();
+				map.put(String.valueOf((char) i), new int[] { spaceWidth, spaceHeight });
+			}
+			FONT_REC_MAP.put(font, map);
 		}
 	}
 }
