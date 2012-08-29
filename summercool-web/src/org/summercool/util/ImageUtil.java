@@ -9,6 +9,7 @@ import java.awt.Transparency;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -23,6 +24,10 @@ import org.summercool.image.Scalr;
 import org.summercool.image.Scalr.Method;
 import org.summercool.image.Scalr.Mode;
 
+import com.alibaba.simpleimage.SimpleImageException;
+import com.alibaba.simpleimage.io.ByteArrayInputStream;
+import com.alibaba.simpleimage.render.ReadRender;
+import com.alibaba.simpleimage.render.WriteRender;
 import com.sun.image.codec.jpeg.ImageFormatException;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGEncodeParam;
@@ -205,7 +210,20 @@ public class ImageUtil {
 			String[] watermark, Font font, Color fontColor) throws IOException {
 		checkParams(in, out, maxWidth, maxHeight, quality);
 		//
-		BufferedImage image = ImageIO.read(in);
+		InputStream inputStream;
+		try {
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			WriteRender wr = null;
+			ReadRender rr = new ReadRender(in, true);
+			wr = new WriteRender(rr, baos);
+			wr.render();
+			//
+			inputStream = new ByteArrayInputStream(baos.toByteArray());
+		} catch (SimpleImageException e) {
+			throw new IOException(e);
+		}
+		//
+		BufferedImage image = ImageIO.read(inputStream);
 		image = Scalr.resize(image, Method.AUTOMATIC, Mode.AUTOMATIC, maxWidth, maxHeight);
 		// create new image with right size/format
 		BufferedImage bufferedImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
