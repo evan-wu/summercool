@@ -18,19 +18,55 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.util.FileCopyUtils;
 import org.summercool.util.ImageUtil;
 
+import com.alibaba.simpleimage.ImageFormat;
+import com.alibaba.simpleimage.ImageRender;
 import com.alibaba.simpleimage.render.ReadRender;
+import com.alibaba.simpleimage.render.ScaleParameter;
+import com.alibaba.simpleimage.render.ScaleRender;
 import com.alibaba.simpleimage.render.WriteRender;
 
 public class ImageUtilTest {
 
+	public static void resizeImage(String imageFullPath, int minEdgeLength) throws Exception {
+		ImageRender sr = null;
+		ImageRender wr = null;
+		InputStream input = null;
+		FileOutputStream output = null;
+		try {
+			input = new FileInputStream(imageFullPath);
+			byte[] bytes= IOUtils.toByteArray(input);
+			input.close();
+			//
+			input = new ByteArrayInputStream(bytes);
+			sr = new ScaleRender(input, true, new ScaleParameter(minEdgeLength, minEdgeLength));
+			output = new FileOutputStream(new File(imageFullPath));
+			wr = new WriteRender(sr, output, ImageFormat.JPEG);
+			wr.render();
+		} finally {
+			if (wr != null) {
+				wr.dispose();
+			}
+			if (sr != null) {
+				sr.dispose();
+			}
+			IOUtils.closeQuietly(output);
+			IOUtils.closeQuietly(input);
+		}
+	}
+	
 	public static void main(String[] args) throws IOException {
 		File file = new File("D:/image/jpg/A.jpg");
-		FileOutputStream out = new FileOutputStream(new File("D:/image/jpg/A-JPG-1.jpg"));
+//		FileOutputStream out = new FileOutputStream(new File("D:/image/jpg/A-JPG-1.jpg"));
 		try{
-			long begin = System.currentTimeMillis();
-			byte[] bytes = FileCopyUtils.copyToByteArray(file);
-			ImageUtil.resize(new ByteArrayInputStream(bytes), out, 817, 817, 1, 0.85f, null, null, null);
-			System.out.println(System.currentTimeMillis() - begin);
+			
+		
+	     resizeImage("d:/image/jpg/A.jpg", 817);
+	          
+			
+//			long begin = System.currentTimeMillis();
+//			byte[] bytes = FileCopyUtils.copyToByteArray(file);
+//			ImageUtil.resize(new ByteArrayInputStream(bytes), out, 817, 817, 1, 0.85f, null, null, null);
+//			System.out.println(System.currentTimeMillis() - begin);
 			
 			// resizeGif(in, out, 600, 600, 1f, null, null, null);
 
@@ -76,7 +112,7 @@ public class ImageUtilTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			out.close();
+//			out.close();
 		}
 	}
 
