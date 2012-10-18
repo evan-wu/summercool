@@ -17,15 +17,27 @@ public class ExcelUtil {
 	/**
 	 * 
 	 * @Title: createWorkbook
-	 * @Description: TODO(这里用一句话描述这个方法的作用)
+	 * @Description: 生成Excel
 	 * @return Workbook 返回类型
 	 * @param output
 	 * @throws Exception
 	 */
-	public static Workbook createWorkbook(OutputStream output) throws Exception {
+	public static Workbook createWorkbook() {
 		Workbook wb = new HSSFWorkbook();
-		wb.write(output);
 		return wb;
+	}
+
+	/**
+	 * 
+	 * @Title: writeWorkbook
+	 * @Description: 输入Excel
+	 * @return void 返回类型
+	 * @param wb
+	 * @param output
+	 * @throws Exception
+	 */
+	public static void writeWorkbook(Workbook wb, OutputStream output) throws Exception {
+		wb.write(output);
 	}
 
 	/**
@@ -56,7 +68,9 @@ public class ExcelUtil {
 	public static void createCell(Workbook wb, Row row, short column, XCell xCell) {
 		CreationHelper createHelper = wb.getCreationHelper();
 		CellStyle cellStyle = wb.createCellStyle();
-		cellStyle.setDataFormat(createHelper.createDataFormat().getFormat("yy-m-d"));
+		if (xCell.getType() == 3) {
+			cellStyle.setDataFormat(createHelper.createDataFormat().getFormat("yy-m-d"));
+		}
 		//
 		Cell cell = row.createCell(column);
 		cellStyle.setAlignment(CellStyle.ALIGN_RIGHT); // 左右左对齐
@@ -67,7 +81,7 @@ public class ExcelUtil {
 		cellStyle.setBorderRight(HSSFCellStyle.BORDER_THIN);// 右边框
 		if (xCell.isColor()) {
 			cellStyle.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
-			cellStyle.setFillForegroundColor(HSSFColor.GREY_50_PERCENT.index);
+			cellStyle.setFillForegroundColor(HSSFColor.GREY_40_PERCENT.index);
 		}
 		cell.setCellStyle(cellStyle);
 		//
