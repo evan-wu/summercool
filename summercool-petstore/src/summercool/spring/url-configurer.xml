@@ -14,9 +14,12 @@
 		<property name="urlMap">
 			<map>
 				<entry key="/item/*.htm" value="/item/item_detail.htm" />
+				<entry key="/welcome.htm" value-ref="welcomeController"/>
 			</map>
 		</property>
 	</bean>
+	
+	<bean id="welcomeController" class="org.summercool.platform.web.module.petstore.controller.WelcomeController"/>
 
 	<bean name="urlModuleConfigurer" class="org.summercool.web.module.UrlBuilderModuleConfigurer">
 		<property name="urlBuilderBeanMap">
