@@ -5,7 +5,7 @@ import org.summercool.beans.crypto.DefaultCryptoBeanDefinition;
 
 public class CryptoUtils {
 
-	private static final String DEFAULT_CRYPTO_KEY = "0ajs!):1bkt@_2c#+3dmv$[4enw%]5fox^{6gpy&}7hqz*;8ir~('9";
+	private static final String DEFAULT_CRYPTO_KEY = "abcdefghijklmnopqrsturlxzz";
 	
 	
 	private static CryptoHandler CRYPTO_HANDLER = new CryptoHandler();
